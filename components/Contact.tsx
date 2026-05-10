@@ -111,7 +111,7 @@ export default function Contact() {
               Ready to Elevate
               <br />
               Your{" "}
-              <span className="gold-text">Digital Presence?</span>
+              <span className="gold-text-animated">Digital Presence?</span>
             </motion.h2>
 
             <motion.p
@@ -124,7 +124,7 @@ export default function Contact() {
             </motion.p>
 
             {/* Contact Info */}
-            <div className="space-y-4 mb-10">
+            <div className="space-y-3 mb-10">
               {contactInfo.map((item, i) => {
                 const Icon = item.icon;
                 return (
@@ -134,32 +134,34 @@ export default function Contact() {
                     animate={isInView ? { opacity: 1, x: 0 } : {}}
                     transition={{ delay: 0.2 + i * 0.08 }}
                   >
-                    {item.href ? (
-                      <a
-                        href={item.href}
-                        className="flex items-center gap-4 group"
-                      >
-                        <div className="w-10 h-10 rounded-xl bg-gold-500/10 border border-gold-500/20 flex items-center justify-center shrink-0 group-hover:bg-gold-500/20 transition-colors">
-                          <Icon size={16} className="text-gold-500" />
-                        </div>
-                        <div>
-                          <div className="text-[10px] text-gray-600 uppercase tracking-wider">{item.label}</div>
-                          <div className="text-sm font-medium text-white group-hover:text-gold-300 transition-colors">
-                            {item.value}
+                    <Tilt3D intensity={6} scale={1.02}>
+                      <div className="glass rounded-xl border border-white/8 hover:border-white/15 transition-all duration-300"
+                        style={{ boxShadow: "0 4px 16px rgba(212,175,55,0.06)" }}>
+                        {item.href ? (
+                          <a href={item.href} className="flex items-center gap-4 p-4 group">
+                            <div className="w-10 h-10 rounded-xl bg-gold-500/10 border border-gold-500/20 flex items-center justify-center shrink-0 group-hover:bg-gold-500/20 transition-colors"
+                              style={{ transform: "translateZ(12px)" }}>
+                              <Icon size={16} className="text-gold-400" />
+                            </div>
+                            <div>
+                              <div className="text-[10px] text-blue-300/50 uppercase tracking-wider">{item.label}</div>
+                              <div className="text-sm font-medium text-white group-hover:text-gold-300 transition-colors">{item.value}</div>
+                            </div>
+                          </a>
+                        ) : (
+                          <div className="flex items-center gap-4 p-4">
+                            <div className="w-10 h-10 rounded-xl bg-gold-500/10 border border-gold-500/20 flex items-center justify-center shrink-0"
+                              style={{ transform: "translateZ(12px)" }}>
+                              <Icon size={16} className="text-gold-400" />
+                            </div>
+                            <div>
+                              <div className="text-[10px] text-blue-300/50 uppercase tracking-wider">{item.label}</div>
+                              <div className="text-sm font-medium text-white">{item.value}</div>
+                            </div>
                           </div>
-                        </div>
-                      </a>
-                    ) : (
-                      <div className="flex items-center gap-4">
-                        <div className="w-10 h-10 rounded-xl bg-gold-500/10 border border-gold-500/20 flex items-center justify-center shrink-0">
-                          <Icon size={16} className="text-gold-500" />
-                        </div>
-                        <div>
-                          <div className="text-[10px] text-gray-600 uppercase tracking-wider">{item.label}</div>
-                          <div className="text-sm font-medium text-white">{item.value}</div>
-                        </div>
+                        )}
                       </div>
-                    )}
+                    </Tilt3D>
                   </motion.div>
                 );
               })}
@@ -167,15 +169,18 @@ export default function Contact() {
 
             {/* Response time */}
             <motion.div
-              className="glass-gold rounded-xl p-4 inline-flex items-center gap-3"
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ delay: 0.5 }}
             >
-              <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              <span className="text-xs text-gray-400">
-                Average response time: <span className="text-white font-medium">Under 2 hours</span>
-              </span>
+              <Tilt3D intensity={5} scale={1.02}>
+                <div className="glass-gold rounded-xl p-4 inline-flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                  <span className="text-xs text-blue-200/70">
+                    Average response time: <span className="text-white font-medium">Under 2 hours</span>
+                  </span>
+                </div>
+              </Tilt3D>
             </motion.div>
           </div>
 
@@ -185,6 +190,7 @@ export default function Contact() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
+            <Tilt3D intensity={4} scale={1.01}>
             <form onSubmit={handleSubmit} className="gradient-border p-8 space-y-5">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
@@ -312,6 +318,7 @@ export default function Contact() {
                 Your information is kept strictly confidential. We respond within 2 business hours.
               </p>
             </form>
+            </Tilt3D>
           </motion.div>
         </div>
       </div>

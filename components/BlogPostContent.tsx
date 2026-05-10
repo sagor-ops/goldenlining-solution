@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowLeft, Clock, Calendar, ArrowUpRight } from "lucide-react";
 import type { BlogPost } from "@/lib/blog-posts";
+import Tilt3D from "./Tilt3D";
 
 interface Props {
   post: BlogPost;
@@ -172,24 +173,27 @@ export default function BlogPostContent({ post, related }: Props) {
               {related.map((rp, i) => (
                 <motion.div key={rp.slug}
                   initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}>
-                  <Link href={`/blog/${rp.slug}`} className="gradient-border group block p-5 hover:glass-gold transition-all duration-300">
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="text-[9px] tracking-wider uppercase font-semibold px-2 py-0.5 rounded-full"
-                        style={{ color: rp.color, background: `${rp.color}12`, border: `1px solid ${rp.color}25` }}>
-                        {rp.category}
-                      </span>
-                      <span className="text-gray-700 text-[9px] flex items-center gap-1">
-                        <Clock size={9} />{rp.readTime}
-                      </span>
-                    </div>
-                    <h3 className="text-sm font-semibold text-white leading-snug mb-2 group-hover:text-gold-300 transition-colors">
-                      {rp.title}
-                    </h3>
-                    <p className="text-xs text-gray-500 line-clamp-2 leading-relaxed">{rp.excerpt}</p>
-                    <div className="flex items-center gap-1 mt-3 text-xs font-medium" style={{ color: rp.color }}>
-                      Read article <ArrowUpRight size={12} />
-                    </div>
-                  </Link>
+                  <Tilt3D intensity={7} scale={1.03}>
+                    <Link href={`/blog/${rp.slug}`} className="gradient-border group block p-5"
+                      style={{ boxShadow: `0 4px 20px ${rp.color}10` }}>
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="text-[9px] tracking-wider uppercase font-semibold px-2 py-0.5 rounded-full"
+                          style={{ color: rp.color, background: `${rp.color}12`, border: `1px solid ${rp.color}25` }}>
+                          {rp.category}
+                        </span>
+                        <span className="text-gray-700 text-[9px] flex items-center gap-1">
+                          <Clock size={9} />{rp.readTime}
+                        </span>
+                      </div>
+                      <h3 className="text-sm font-semibold text-white leading-snug mb-2 group-hover:text-gold-300 transition-colors">
+                        {rp.title}
+                      </h3>
+                      <p className="text-xs text-gray-500 line-clamp-2 leading-relaxed">{rp.excerpt}</p>
+                      <div className="flex items-center gap-1 mt-3 text-xs font-medium" style={{ color: rp.color }}>
+                        Read article <ArrowUpRight size={12} />
+                      </div>
+                    </Link>
+                  </Tilt3D>
                 </motion.div>
               ))}
             </div>

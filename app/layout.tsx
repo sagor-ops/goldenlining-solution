@@ -81,7 +81,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           }}
         />
       </head>
-      <body className="bg-[#050d1f] text-white antialiased overflow-x-hidden">
+      <body className="text-white antialiased overflow-x-hidden" style={{ background: "#0d1f14" }}>
         <SmoothScrollProvider>
           <CustomCursor />
           {children}

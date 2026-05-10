@@ -84,7 +84,7 @@ export default function Team() {
             <span className="gold-text-animated text-3d">Minds</span>
           </motion.h2>
           <motion.p
-            className="text-gray-400 max-w-lg mx-auto text-base leading-relaxed"
+            className="text-blue-200/70 max-w-lg mx-auto text-base leading-relaxed"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.2 }}
