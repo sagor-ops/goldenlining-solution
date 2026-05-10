@@ -40,19 +40,17 @@ export default function Hero() {
       >
 
         {/* ── Full-screen hero image ── */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/hero-strip.jpg.png"
-            alt=""
-            aria-hidden
-            className="w-full h-full"
-            style={{
-              objectFit: "cover",
-              objectPosition: "center 40%",
-              filter: "saturate(1.2) brightness(0.75)",
-            }}
-          />
-        </div>
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: "url('/hero-strip.jpg.png')",
+            backgroundSize: "auto 100%",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "0% 40%",
+            filter: "saturate(1.2) brightness(0.75)",
+            animation: "hero-pan 25s linear infinite alternate",
+          }}
+        />
 
         {/* ── Gradient overlays for text readability ── */}
         {/* Top-down dark overlay so text is readable */}

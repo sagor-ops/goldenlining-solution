@@ -327,6 +327,10 @@ html.lenis { height: auto; }
   0%   { transform: rotate(0deg) translateX(70px) rotate(0deg); }
   100% { transform: rotate(360deg) translateX(70px) rotate(-360deg); }
 }
+@keyframes hero-pan {
+  from { background-position: 0% 40%; }
+  to   { background-position: 100% 40%; }
+}
 @keyframes float-3d {
   0%, 100% { transform: translateY(0px) translateZ(0px) rotateX(0deg); box-shadow: 0 4px 20px rgba(212,175,55,0.1); }
   50%       { transform: translateY(-22px) translateZ(40px) rotateX(6deg); box-shadow: 0 24px 50px rgba(212,175,55,0.25); }
