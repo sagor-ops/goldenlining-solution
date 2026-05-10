@@ -42,7 +42,7 @@ export default function Hero() {
         {/* ── Full-screen hero image ── */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/hero-strip.jpg"
+            src="/hero-strip.jpg.png"
             alt=""
             aria-hidden
             className="w-full h-full"
