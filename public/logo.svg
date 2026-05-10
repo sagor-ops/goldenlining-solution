@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 370 72" fill="none">
+  <defs>
+    <linearGradient id="gGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5d76e"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#9a7420"/>
+    </linearGradient>
+    <linearGradient id="gLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#fde68a" stop-opacity="0.0"/>
+      <stop offset="20%"  stop-color="#d4af37" stop-opacity="1"/>
+      <stop offset="80%"  stop-color="#d4af37" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#fde68a" stop-opacity="0.0"/>
+    </linearGradient>
+    <linearGradient id="gWord" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#f0c840"/>
+      <stop offset="55%"  stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#b89030"/>
+    </linearGradient>
+    <linearGradient id="gDiamond" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#fbbf24" stop-opacity="0.85"/>
+      <stop offset="50%"  stop-color="#d4af37" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#92670a" stop-opacity="0.25"/>
+    </linearGradient>
+    <filter id="glowMark" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glowText" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- ── MARK: Diamond with the Golden Lining ── -->
+
+  <!-- Outer diamond -->
+  <polygon
+    points="36,4 67,36 36,68 5,36"
+    fill="none"
+    stroke="url(#gDiamond)"
+    stroke-width="1.1"
+  />
+
+  <!-- Inner diamond (refined inner frame) -->
+  <polygon
+    points="36,15 56,36 36,57 16,36"
+    fill="none"
+    stroke="url(#gGold)"
+    stroke-width="0.5"
+    opacity="0.22"
+  />
+
+  <!-- Corner accent ticks -->
+  <line x1="36" y1="4"  x2="36" y2="9"  stroke="#d4af37" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  <line x1="36" y1="63" x2="36" y2="68" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  <line x1="5"  y1="36" x2="10" y2="36" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  <line x1="62" y1="36" x2="67" y2="36" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- The Golden Lining — the horizontal bar through the diamond -->
+  <line
+    x1="7" y1="36" x2="65" y2="36"
+    stroke="url(#gLine)"
+    stroke-width="2"
+    stroke-linecap="round"
+    filter="url(#glowMark)"
+  />
+
+  <!-- ── DIVIDER ── -->
+  <line x1="84" y1="14" x2="84" y2="58" stroke="url(#gWord)" stroke-width="0.6" opacity="0.2"/>
+
+  <!-- ── WORDMARK ── -->
+  <text
+    x="100"
+    y="33"
+    font-family="'Helvetica Neue', 'Arial', sans-serif"
+    font-size="16"
+    font-weight="700"
+    letter-spacing="4"
+    fill="url(#gWord)"
+    filter="url(#glowText)"
+  >GOLDENLINING</text>
+
+  <!-- Thin separator rule -->
+  <rect x="100" y="40.5" width="236" height="0.55" fill="url(#gWord)" opacity="0.18" rx="0.3"/>
+
+  <!-- SOLUTION subtext -->
+  <text
+    x="101"
+    y="55"
+    font-family="'Helvetica Neue', 'Arial', sans-serif"
+    font-size="7.5"
+    font-weight="300"
+    letter-spacing="10.5"
+    fill="#6b7280"
+  >SOLUTION</text>
+</svg>
