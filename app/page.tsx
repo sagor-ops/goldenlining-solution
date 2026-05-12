@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
 import WhyChooseUs from "@/components/WhyChooseUs";
+import ContactStrip from "@/components/ContactStrip";
 import StatsBar from "@/components/StatsBar";
 import ConsultationCTA from "@/components/ConsultationCTA";
 import Footer from "@/components/Footer";
@@ -15,6 +16,7 @@ export default function HomePage() {
       <Hero />
       <TrustBar />
       <WhyChooseUs />
+      <ContactStrip />
       <StatsBar />
       <ConsultationCTA />
       <Footer />

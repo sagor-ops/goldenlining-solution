@@ -157,7 +157,7 @@ export async function POST(request: Request) {
     if (process.env.SMTP_USER && process.env.SMTP_PASS) {
       await transporter.sendMail({
         from: `"Goldenlining Solution" <${process.env.SMTP_USER}>`,
-        to: "sobur112@gmail.com",
+        to: "goldenliningsolution@gmail.com",
         replyTo: email,
         subject: `New ${source === "consultation-modal" ? "Consultation" : "Enquiry"}: ${name} — ${service || "General Enquiry"}`,
         html: emailHtml,

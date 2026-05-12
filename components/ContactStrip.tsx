@@ -10,17 +10,15 @@ const services = [
   "Google Ads Management",
   "Ecommerce Development",
   "Branding & Logo Design",
-  "Content Strategy & Creation",
-  "UI/UX Design",
-  "WordPress Development",
   "Other",
 ];
 
 type Status = "idle" | "loading" | "success" | "error";
 
-export default function Contact() {
+export default function ContactStrip() {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
+
   const [form, setForm] = useState({ name: "", email: "", service: "", message: "" });
   const [status, setStatus] = useState<Status>("idle");
 
@@ -33,7 +31,7 @@ export default function Contact() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, source: "contact-page" }),
+        body: JSON.stringify({ ...form, source: "homepage-strip" }),
       });
       if (!res.ok) throw new Error();
       setStatus("success");
@@ -57,7 +55,6 @@ export default function Contact() {
   return (
     <section
       ref={ref}
-      id="contact"
       className="relative overflow-hidden"
       style={{ background: "#0d1f14" }}
     >
@@ -67,27 +64,16 @@ export default function Contact() {
       {/* Subtle grid */}
       <div className="absolute inset-0 grid-overlay opacity-10 pointer-events-none" />
 
-      {/* Glow blobs */}
-      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] rounded-full blur-3xl pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(212,175,55,0.06), transparent)" }} />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full blur-3xl pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(212,175,55,0.05), transparent)" }} />
+      {/* Gold glow */}
+      <div
+        className="absolute top-0 right-1/4 w-[500px] h-[500px] rounded-full blur-3xl pointer-events-none"
+        style={{ background: "radial-gradient(circle, rgba(212,175,55,0.06), transparent)" }}
+      />
 
-      {/* Orbital rings */}
-      <div className="absolute top-12 right-12 w-28 h-28 pointer-events-none hidden xl:block" style={{ perspective: "500px" }}>
-        {[
-          { color: "rgba(212,175,55,0.45)", dur: 11, anim: "spin-3d-y" },
-          { color: "rgba(212,175,55,0.2)",  dur: 17, anim: "spin-3d-x" },
-        ].map((r, i) => (
-          <div key={i} className="absolute inset-0 rounded-full border-2"
-            style={{ borderColor: r.color, animation: `${r.anim} ${r.dur}s linear infinite` }} />
-        ))}
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 py-16 lg:py-24 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 py-16 lg:py-20">
         <div className="grid lg:grid-cols-[1fr_1.6fr] gap-12 lg:gap-20 items-center">
 
-          {/* ── Left ── */}
+          {/* ── Left: text ── */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -96,49 +82,24 @@ export default function Contact() {
             <p className="text-[10px] tracking-[0.35em] uppercase font-bold mb-4" style={{ color: "#d4af37" }}>
               Get In Touch
             </p>
-            <h2 className="font-display font-bold text-white leading-tight mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)" }}>
+            <h2 className="font-display font-bold text-white leading-tight mb-4" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)" }}>
               Ready to Elevate<br />
               <span style={{ color: "#d4af37" }}>Your Brand?</span>
             </h2>
-            <p className="text-sm leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.45)", maxWidth: "360px" }}>
+            <p className="text-sm leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.45)", maxWidth: "340px" }}>
               Tell us about your project — we&apos;ll get back to you within 24 hours with a tailored strategy.
             </p>
-
-            <div className="flex flex-col gap-3 mb-8">
-              {[
-                { label: "Phone",    value: "+61 480 684 500",              href: "tel:+61480684500" },
-                { label: "Email",    value: "goldenliningsolution@gmail.com", href: "mailto:goldenliningsolution@gmail.com" },
-                { label: "Location", value: "Australia & Global",            href: null },
-              ].map((item) => (
-                <div key={item.label} className="flex items-center gap-3 text-sm">
-                  <span className="text-[10px] tracking-widest uppercase font-bold w-16 shrink-0" style={{ color: "rgba(212,175,55,0.5)" }}>
-                    {item.label}
-                  </span>
-                  <span className="h-px w-4" style={{ background: "rgba(212,175,55,0.3)" }} />
-                  {item.href ? (
-                    <a href={item.href} className="font-medium text-white hover:text-yellow-400 transition-colors">
-                      {item.value}
-                    </a>
-                  ) : (
-                    <span className="font-medium text-white">{item.value}</span>
-                  )}
+            <div className="flex flex-col gap-3">
+              {["Free initial consultation", "No lock-in contracts", "Same-day response"].map((item) => (
+                <div key={item} className="flex items-center gap-3 text-xs font-medium" style={{ color: "rgba(255,255,255,0.5)" }}>
+                  <span className="w-1.5 h-1.5 rotate-45 shrink-0" style={{ background: "#d4af37" }} />
+                  {item}
                 </div>
               ))}
             </div>
-
-            <div className="flex items-center gap-3 pt-6 border-t" style={{ borderColor: "rgba(212,175,55,0.15)" }}>
-              <div className="flex gap-1.5">
-                {[32, 16, 8].map((w, n) => (
-                  <div key={n} className="h-1" style={{ width: w, background: "#d4af37", opacity: 1 - n * 0.28 }} />
-                ))}
-              </div>
-              <span className="text-[10px] tracking-widest uppercase" style={{ color: "rgba(255,255,255,0.3)" }}>
-                Average response: Under 24 hours
-              </span>
-            </div>
           </motion.div>
 
-          {/* ── Right: Form ── */}
+          {/* ── Right: form ── */}
           <motion.div
             initial={{ opacity: 0, x: 24 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -146,11 +107,11 @@ export default function Contact() {
           >
             {status === "success" ? (
               <div
-                className="flex flex-col items-center justify-center text-center py-16 px-8"
+                className="flex flex-col items-center justify-center text-center py-12 px-8"
                 style={{ border: "1px solid rgba(212,175,55,0.25)", background: "rgba(212,175,55,0.04)" }}
               >
-                <CheckCircle size={44} style={{ color: "#d4af37" }} className="mb-4" />
-                <h3 className="text-white font-bold text-xl mb-2">Message Sent!</h3>
+                <CheckCircle size={40} style={{ color: "#d4af37" }} className="mb-4" />
+                <h3 className="text-white font-bold text-lg mb-2">Message Sent!</h3>
                 <p className="text-sm" style={{ color: "rgba(255,255,255,0.45)" }}>
                   We&apos;ll be in touch within 24 hours.
                 </p>
@@ -164,26 +125,32 @@ export default function Contact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                {/* Name + Email */}
+                {/* Name + Email row */}
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1.5">
                     <label className="text-[10px] tracking-[0.25em] uppercase font-bold" style={{ color: "rgba(212,175,55,0.7)" }}>Name *</label>
                     <input
-                      type="text" required placeholder="Your name"
-                      value={form.name} onChange={(e) => set("name", e.target.value)}
+                      type="text"
+                      required
+                      placeholder="Your name"
+                      value={form.name}
+                      onChange={(e) => set("name", e.target.value)}
                       style={inputBase}
                       onFocus={(e) => (e.target.style.borderColor = "#d4af37")}
-                      onBlur={(e)  => (e.target.style.borderColor = "rgba(212,175,55,0.2)")}
+                      onBlur={(e) => (e.target.style.borderColor = "rgba(212,175,55,0.2)")}
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">
                     <label className="text-[10px] tracking-[0.25em] uppercase font-bold" style={{ color: "rgba(212,175,55,0.7)" }}>Email *</label>
                     <input
-                      type="email" required placeholder="your@email.com"
-                      value={form.email} onChange={(e) => set("email", e.target.value)}
+                      type="email"
+                      required
+                      placeholder="your@email.com"
+                      value={form.email}
+                      onChange={(e) => set("email", e.target.value)}
                       style={inputBase}
                       onFocus={(e) => (e.target.style.borderColor = "#d4af37")}
-                      onBlur={(e)  => (e.target.style.borderColor = "rgba(212,175,55,0.2)")}
+                      onBlur={(e) => (e.target.style.borderColor = "rgba(212,175,55,0.2)")}
                     />
                   </div>
                 </div>
@@ -192,10 +159,11 @@ export default function Contact() {
                 <div className="flex flex-col gap-1.5">
                   <label className="text-[10px] tracking-[0.25em] uppercase font-bold" style={{ color: "rgba(212,175,55,0.7)" }}>Service Interested In</label>
                   <select
-                    value={form.service} onChange={(e) => set("service", e.target.value)}
+                    value={form.service}
+                    onChange={(e) => set("service", e.target.value)}
                     style={{ ...inputBase, appearance: "none", cursor: "pointer" }}
                     onFocus={(e) => (e.target.style.borderColor = "#d4af37")}
-                    onBlur={(e)  => (e.target.style.borderColor = "rgba(212,175,55,0.2)")}
+                    onBlur={(e) => (e.target.style.borderColor = "rgba(212,175,55,0.2)")}
                   >
                     <option value="" style={{ background: "#0d1f14" }}>Select a service…</option>
                     {services.map((s) => (
@@ -208,11 +176,14 @@ export default function Contact() {
                 <div className="flex flex-col gap-1.5">
                   <label className="text-[10px] tracking-[0.25em] uppercase font-bold" style={{ color: "rgba(212,175,55,0.7)" }}>Message *</label>
                   <textarea
-                    required rows={4} placeholder="Tell us about your project…"
-                    value={form.message} onChange={(e) => set("message", e.target.value)}
+                    required
+                    rows={3}
+                    placeholder="Tell us about your project…"
+                    value={form.message}
+                    onChange={(e) => set("message", e.target.value)}
                     style={{ ...inputBase, resize: "none" }}
                     onFocus={(e) => (e.target.style.borderColor = "#d4af37")}
-                    onBlur={(e)  => (e.target.style.borderColor = "rgba(212,175,55,0.2)")}
+                    onBlur={(e) => (e.target.style.borderColor = "rgba(212,175,55,0.2)")}
                   />
                 </div>
 
@@ -223,7 +194,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="group self-start flex items-center gap-3 px-10 py-4 text-sm font-bold tracking-wide transition-all hover:opacity-90 disabled:opacity-60"
+                  className="group self-start flex items-center gap-3 px-8 py-4 text-sm font-bold tracking-wide transition-all hover:opacity-90 disabled:opacity-60"
                   style={{
                     background: "#d4af37",
                     color: "#000",
@@ -231,19 +202,15 @@ export default function Contact() {
                     boxShadow: "0 8px 28px rgba(212,175,55,0.35)",
                   }}
                 >
-                  {status === "loading"
-                    ? <><Loader2 size={15} className="animate-spin" /> Sending…</>
-                    : <>Send Message <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" /></>
-                  }
+                  {status === "loading" ? (
+                    <><Loader2 size={15} className="animate-spin" /> Sending…</>
+                  ) : (
+                    <>Send Message <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" /></>
+                  )}
                 </button>
-
-                <p className="text-[10px]" style={{ color: "rgba(255,255,255,0.25)" }}>
-                  Your information is kept strictly confidential. We respond within 24 hours.
-                </p>
               </form>
             )}
           </motion.div>
-
         </div>
       </div>
 

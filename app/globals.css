@@ -327,6 +327,10 @@ html.lenis { height: auto; }
   0%   { transform: rotate(0deg) translateX(70px) rotate(0deg); }
   100% { transform: rotate(360deg) translateX(70px) rotate(-360deg); }
 }
+@keyframes marquee-quote {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 @keyframes hero-pan {
   from { background-position: 0% 40%; }
   to   { background-position: 100% 40%; }
