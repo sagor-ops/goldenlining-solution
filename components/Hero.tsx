@@ -6,12 +6,6 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import ConsultationModal from "./ConsultationModal";
 
-const stats = [
-  { value: "200+", label: "Projects Delivered" },
-  { value: "98%",  label: "Client Satisfaction" },
-  { value: "50+",  label: "Global Clients" },
-  { value: "7+",   label: "Years Experience" },
-];
 
 const trustItems = ["No lock-in contracts", "Free initial consultation", "Results guaranteed"];
 
@@ -261,46 +255,6 @@ export default function Hero() {
             ))}
           </motion.div>
 
-          {/* Stats grid */}
-          <motion.div
-            className="grid grid-cols-2 md:grid-cols-4 overflow-hidden"
-            style={{
-              border: "1px solid rgba(212,175,55,0.3)",
-              background: "rgba(13,20,10,0.55)",
-              backdropFilter: "blur(12px)",
-              WebkitBackdropFilter: "blur(12px)",
-            }}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.1 }}
-          >
-            {stats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                className="relative text-center py-7 px-4"
-                style={{
-                  borderRight: i < stats.length - 1 ? "1px solid rgba(212,175,55,0.15)" : "none",
-                  animation: `float-3d ${5.5 + i * 0.6}s ease-in-out infinite`,
-                  animationDelay: `${i * 0.35}s`,
-                }}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.2 + i * 0.08 }}
-              >
-                <div className="absolute inset-0 surface-light" />
-                <div
-                  className="text-3xl md:text-4xl font-extrabold mb-1 relative z-10 gold-text-animated"
-                  style={{ textShadow: "0 0 30px rgba(212,175,55,0.7)" }}
-                >
-                  {stat.value}
-                </div>
-                <div className="text-[10px] tracking-[0.25em] uppercase font-semibold relative z-10"
-                  style={{ color: "rgba(255,255,255,0.45)" }}>
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
         </div>
 
         {/* Bottom fade into next section */}
