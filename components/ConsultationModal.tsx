@@ -124,7 +124,7 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
               <div className="h-0.5 w-full rounded-t-2xl" style={{ background: "linear-gradient(90deg, transparent, #d4af37, transparent)" }} />
 
               {/* Header */}
-              <div className="relative p-8 pb-6" style={{ borderBottom: "1px solid #f0f0f0" }}>
+              <div className="relative p-5 sm:p-8 pb-5 sm:pb-6" style={{ borderBottom: "1px solid #f0f0f0" }}>
                 <button
                   onClick={onClose}
                   className="absolute top-5 right-5 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200"
@@ -145,7 +145,7 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
                   </span>
                 </div>
 
-                <h2 className="font-display text-2xl font-bold mb-1" style={{ color: "#111" }}>
+                <h2 className="font-display text-xl sm:text-2xl font-bold mb-1 pr-8" style={{ color: "#111" }}>
                   Book Your Free 30-Minute Session
                 </h2>
                 <p className="text-sm" style={{ color: "#6b7280" }}>
@@ -167,7 +167,7 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
               </div>
 
               {/* Form or Success */}
-              <div className="p-8">
+              <div className="p-5 sm:p-8">
                 {status === "success" ? (
                   <motion.div className="text-center py-10"
                     initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }}

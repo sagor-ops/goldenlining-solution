@@ -135,7 +135,7 @@ export default function Hero() {
         </div>
 
         {/* ── Main content — left-aligned ── */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-16" style={{ paddingTop: "11rem", paddingBottom: "6rem" }}>
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-16 pt-28 sm:pt-36 lg:pt-44 pb-14 sm:pb-20 lg:pb-24">
           <div
             className="max-w-2xl"
             style={{
@@ -210,14 +210,14 @@ export default function Hero() {
 
             {/* CTA buttons */}
             <motion.div
-              className="flex flex-col sm:flex-row items-start gap-4 mb-8"
+              className="flex flex-col sm:flex-row items-stretch sm:items-start gap-4 mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.85 }}
             >
               <button
                 onClick={() => setModalOpen(true)}
-                className="group flex items-center gap-3 px-9 py-4 text-sm font-bold tracking-wide transition-all hover:opacity-90"
+                className="group flex items-center justify-center gap-3 px-9 py-4 text-sm font-bold tracking-wide transition-all hover:opacity-90"
                 style={{
                   background: "#d4af37",
                   color: "#0d1a08",
@@ -230,7 +230,7 @@ export default function Hero() {
               </button>
               <Link
                 href="/portfolio"
-                className="group flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-wide border transition-all hover:bg-white/10"
+                className="group flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold tracking-wide border transition-all hover:bg-white/10"
                 style={{ color: "rgba(255,255,255,0.8)", borderColor: "rgba(255,255,255,0.3)" }}
               >
                 View Our Work

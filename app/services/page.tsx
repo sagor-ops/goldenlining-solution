@@ -6,10 +6,20 @@ import ConsultationCTA from "@/components/ConsultationCTA";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Digital Services | Web Design, SEO, Branding & More | Goldenlining Solution",
+  title: "Web Design, SEO, Google Ads & Branding Services | Goldenlining Solution",
   description:
-    "Explore Goldenlining Solution's premium digital services — website design, WordPress, ecommerce, SEO, AI search visibility, Google Ads, logo design, branding, and growth marketing. Results-driven strategies for serious businesses.",
-  keywords: ["web design services", "SEO services", "branding agency", "Google Ads management", "ecommerce development", "logo design", "digital marketing"],
+    "Premium digital services: web design, WordPress, ecommerce, SEO & AI visibility, Google Ads, logo design & branding. Goldenlining Solution — results-driven agency for serious businesses across Australia & globally.",
+  keywords: [
+    "web design services Australia", "SEO services Australia", "Google Ads agency",
+    "ecommerce website design", "WordPress web design", "branding agency",
+    "logo design Australia", "digital marketing services", "AI SEO",
+  ],
+  alternates: { canonical: "https://goldenlining.com.au/services" },
+  openGraph: {
+    title: "Web Design, SEO, Google Ads & Branding | Goldenlining Solution",
+    description: "Premium web design, SEO, Google Ads, ecommerce & branding services. Results-driven digital agency for ambitious businesses.",
+    url: "https://goldenlining.com.au/services",
+  },
 };
 
 export default function ServicesPage() {

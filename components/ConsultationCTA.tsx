@@ -56,7 +56,7 @@ export default function ConsultationCTA() {
         {/* Top border */}
         <div className="border-t border-gray-100" />
 
-        <div className="max-w-7xl mx-auto px-6 py-12 lg:py-16">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 py-10 sm:py-12 lg:py-16">
 
           {/* ── Header ── */}
           <div className="grid lg:grid-cols-2 gap-8 items-end mb-8">
@@ -71,7 +71,7 @@ export default function ConsultationCTA() {
               </motion.p>
               <motion.h2
                 className="font-display font-bold text-black leading-[1.04]"
-                style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.8rem)" }}
+                style={{ fontSize: "clamp(1.8rem, 4.5vw, 3.8rem)" }}
                 initial={{ opacity: 0, y: 24 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.1, duration: 0.7 }}

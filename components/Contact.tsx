@@ -68,8 +68,8 @@ export default function Contact() {
       <div className="absolute inset-0 pointer-events-none"
         style={{ background: "radial-gradient(ellipse at 70% 50%, rgba(212,175,55,0.04) 0%, transparent 60%)" }} />
 
-      <div className="max-w-7xl mx-auto px-6 py-16 lg:py-24 relative z-10">
-        <div className="grid lg:grid-cols-[1fr_1.6fr] gap-12 lg:gap-20 items-center">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 py-12 sm:py-16 lg:py-24 relative z-10">
+        <div className="grid lg:grid-cols-[1fr_1.6fr] gap-10 lg:gap-20 items-start">
 
           {/* ── Left ── */}
           <motion.div
@@ -104,7 +104,7 @@ export default function Contact() {
                       href={item.href}
                       target={item.href.startsWith("http") ? "_blank" : undefined}
                       rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                      className="font-medium transition-colors"
+                      className="font-medium transition-colors min-w-0 break-all sm:break-normal"
                       style={{ color: "#111" }}
                       onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#d4af37")}
                       onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#111")}
@@ -215,7 +215,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="group self-start flex items-center gap-3 px-10 py-4 text-sm font-bold tracking-wide transition-all hover:opacity-90 disabled:opacity-60"
+                  className="group w-full sm:w-auto sm:self-start flex items-center justify-center gap-3 px-10 py-4 text-sm font-bold tracking-wide transition-all hover:opacity-90 disabled:opacity-60"
                   style={{
                     background: "#d4af37",
                     color: "#000",

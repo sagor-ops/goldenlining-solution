@@ -5,9 +5,15 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Contact | Goldenlining Solution",
+  title: "Contact Us — Free Consultation | Goldenlining Solution",
   description:
-    "Get in touch with Goldenlining Solution. Book a free consultation, discuss your project, or reach out to our team directly.",
+    "Get in touch with Goldenlining Solution. Book your free 30-minute consultation, discuss your project, or call us at +61 480 684 500. We respond within 2 hours.",
+  alternates: { canonical: "https://goldenlining.com.au/contact" },
+  openGraph: {
+    title: "Contact Goldenlining Solution — Free Consultation",
+    description: "Book a free consultation with our digital agency. Web design, SEO, Google Ads & branding. Response within 2 hours.",
+    url: "https://goldenlining.com.au/contact",
+  },
 };
 
 export default function ContactPage() {

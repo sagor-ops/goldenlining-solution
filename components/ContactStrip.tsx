@@ -70,8 +70,8 @@ export default function ContactStrip() {
         style={{ background: "radial-gradient(ellipse, rgba(212,175,55,0.04), transparent)" }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 py-16 lg:py-20">
-        <div className="grid lg:grid-cols-[1fr_1.6fr] gap-12 lg:gap-20 items-center">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 py-12 sm:py-16 lg:py-20">
+        <div className="grid lg:grid-cols-[1fr_1.6fr] gap-10 lg:gap-20 items-start">
 
           {/* ── Left: text ── */}
           <motion.div
@@ -194,7 +194,7 @@ export default function ContactStrip() {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="group self-start flex items-center gap-3 px-8 py-4 text-sm font-bold tracking-wide transition-all hover:opacity-90 disabled:opacity-60"
+                  className="group w-full sm:w-auto sm:self-start flex items-center justify-center gap-3 px-8 py-4 text-sm font-bold tracking-wide transition-all hover:opacity-90 disabled:opacity-60"
                   style={{
                     background: "#d4af37",
                     color: "#000",

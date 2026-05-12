@@ -64,10 +64,10 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-16 relative z-10">
-        <div className="grid lg:grid-cols-5 gap-12">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 py-12 sm:py-16 relative z-10">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand */}
-          <div className="lg:col-span-2">
+          <div className="col-span-2 lg:col-span-2">
             <Link href="/" className="inline-block mb-6 group">
               <img src="/logo.svg" alt="Goldenlining Solution" className="h-14 w-auto group-hover:opacity-80 transition-opacity" />
             </Link>
@@ -130,7 +130,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-14 pt-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="mt-10 sm:mt-14 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-gray-700">
             &copy; {new Date().getFullYear()} Goldenlining Solution. All rights reserved.
           </p>

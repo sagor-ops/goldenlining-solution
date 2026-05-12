@@ -154,7 +154,7 @@ export default function BlogPostContent({ post, related }: Props) {
 
       {/* ── HERO ── */}
       <section
-        className="relative overflow-hidden pt-36 pb-20"
+        className="relative overflow-hidden pt-24 sm:pt-28 md:pt-36 pb-12 sm:pb-16 md:pb-20"
         style={{ background: "#0d1f14" }}
       >
         {/* Grid overlay */}
@@ -173,7 +173,7 @@ export default function BlogPostContent({ post, related }: Props) {
           style={{ background: "radial-gradient(ellipse, #d4af37, transparent)" }}
         />
 
-        <div className="max-w-4xl mx-auto px-6 relative z-10">
+        <div className="max-w-4xl mx-auto px-5 sm:px-6 relative z-10">
           {/* Back link */}
           <motion.div initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.4 }}>
             <Link href="/blog"
@@ -242,7 +242,7 @@ export default function BlogPostContent({ post, related }: Props) {
 
       {/* ── ARTICLE BODY ── */}
       <section className="relative" style={{ background: "#ffffff" }}>
-        <div className="max-w-3xl mx-auto px-6 py-16 lg:py-20">
+        <div className="max-w-3xl mx-auto px-5 sm:px-6 py-10 sm:py-14 lg:py-20">
 
           {/* Article content */}
           <motion.article
@@ -291,7 +291,7 @@ export default function BlogPostContent({ post, related }: Props) {
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] rounded-full blur-3xl opacity-[0.06] pointer-events-none"
             style={{ background: "radial-gradient(ellipse, #d4af37, transparent)" }} />
 
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
             {/* Header */}
             <div className="flex items-end justify-between mb-10">
               <div>
@@ -310,7 +310,7 @@ export default function BlogPostContent({ post, related }: Props) {
             </div>
 
             {/* Cards */}
-            <div className="grid md:grid-cols-3 gap-5">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5">
               {related.map((rp, i) => (
                 <motion.div key={rp.slug}
                   initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}

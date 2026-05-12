@@ -204,7 +204,7 @@ export default function Portfolio() {
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full blur-3xl opacity-[0.04] pointer-events-none"
         style={{ background: "radial-gradient(ellipse, rgba(212,175,55,0.1), transparent)" }} />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
 
         {/* Search */}
         <motion.div className="mb-8" initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}>
@@ -299,8 +299,8 @@ export default function Portfolio() {
         <div className="absolute inset-0 pointer-events-none"
           style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(212,175,55,0.08) 0%, transparent 65%)" }} />
 
-        <div className="max-w-7xl mx-auto px-6 py-14 relative z-10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 py-10 sm:py-14 relative z-10">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
             <div>
               <p className="text-[10px] tracking-[0.35em] uppercase font-bold mb-3" style={{ color: "#d4af37" }}>
                 Ready to Get Started?
@@ -312,10 +312,10 @@ export default function Portfolio() {
                 We&apos;d love to build something exceptional for your business too. Let&apos;s talk about your project.
               </p>
             </div>
-            <div className="flex items-center gap-4 shrink-0">
+            <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0 w-full md:w-auto">
               <Link
                 href="/contact"
-                className="group flex items-center gap-3 px-8 py-4 text-sm font-bold tracking-wide transition-all hover:opacity-90"
+                className="group w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 text-sm font-bold tracking-wide transition-all hover:opacity-90"
                 style={{
                   background: "#d4af37",
                   color: "#000",

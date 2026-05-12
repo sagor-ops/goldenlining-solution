@@ -29,8 +29,8 @@ export default function About() {
     <section id="about" ref={sectionRef} className="section-padding relative overflow-hidden" style={{ background: "#ffffff" }}>
       <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(212,175,55,0.03) 0%, transparent 60%)" }} />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-20 items-start">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
           {/* Left */}
           <div>
             <motion.span className="text-xs tracking-[0.3em] text-gold-600 uppercase font-semibold mb-3 block"

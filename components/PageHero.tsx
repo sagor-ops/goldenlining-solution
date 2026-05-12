@@ -11,7 +11,7 @@ interface PageHeroProps {
 
 export default function PageHero({ badge, title, highlight, description }: PageHeroProps) {
   return (
-    <section className="relative pt-40 pb-20 overflow-hidden"
+    <section className="relative pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-10 sm:pb-14 md:pb-20 overflow-hidden"
       style={{ background: "#0d1f14" }}>
       <div className="absolute inset-0 grid-overlay opacity-[0.15] pointer-events-none" />
 
@@ -47,20 +47,20 @@ export default function PageHero({ badge, title, highlight, description }: PageH
         style={{ background: "linear-gradient(90deg, transparent, rgba(212,175,55,0.5), transparent)" }}
         animate={{ opacity: [0.3, 1, 0.3] }} transition={{ duration: 3, repeat: Infinity }} />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-        <motion.span className="inline-flex items-center gap-2 glass-gold rounded-full px-4 py-1.5 mb-6"
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10 text-center">
+        <motion.span className="inline-flex items-center gap-2 glass-gold rounded-full px-4 py-1.5 mb-4 sm:mb-6"
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <span className="w-1.5 h-1.5 rounded-full bg-gold-500 animate-pulse-gold" />
           <span className="text-xs text-gold-400 tracking-[0.2em] uppercase font-semibold">{badge}</span>
         </motion.span>
 
-        <motion.h1 className="font-display font-bold text-5xl md:text-7xl leading-[1.05] tracking-tight mb-5"
+        <motion.h1 className="font-display font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight mb-4 sm:mb-5"
           initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }}>
           <span className="text-white">{title} </span>
           <span className="gold-text-animated">{highlight}</span>
         </motion.h1>
 
-        <motion.p className="text-gray-300 text-base md:text-lg max-w-2xl mx-auto leading-relaxed"
+        <motion.p className="text-gray-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed px-2 sm:px-0"
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
           {description}
         </motion.p>

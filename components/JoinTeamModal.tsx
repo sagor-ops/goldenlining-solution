@@ -128,7 +128,7 @@ export default function JoinTeamModal({ isOpen, onClose }: Props) {
               <div className="h-0.5 w-full rounded-t-2xl" style={{ background: "linear-gradient(90deg, transparent, #d4af37, transparent)" }} />
 
               {/* Header */}
-              <div className="flex items-start justify-between px-8 pt-7 pb-5" style={{ borderBottom: "1px solid #f0f0f0" }}>
+              <div className="flex items-start justify-between px-5 sm:px-8 pt-5 sm:pt-7 pb-4 sm:pb-5" style={{ borderBottom: "1px solid #f0f0f0" }}>
                 <div>
                   <p className="text-[10px] tracking-[0.35em] uppercase font-bold mb-1.5" style={{ color: "#d4af37" }}>
                     Careers at Goldenlining
@@ -150,7 +150,7 @@ export default function JoinTeamModal({ isOpen, onClose }: Props) {
               </div>
 
               {/* Body */}
-              <div className="px-8 py-6">
+              <div className="px-5 sm:px-8 py-5 sm:py-6">
                 {status === "success" ? (
                   <div className="flex flex-col items-center justify-center text-center py-10">
                     <CheckCircle size={48} style={{ color: "#d4af37" }} className="mb-4" />
@@ -277,7 +277,7 @@ export default function JoinTeamModal({ isOpen, onClose }: Props) {
                     <button
                       type="submit"
                       disabled={status === "loading"}
-                      className="group self-start flex items-center gap-3 px-8 py-4 text-sm font-bold tracking-wide transition-all hover:opacity-90 disabled:opacity-60 mt-1"
+                      className="group w-full sm:w-auto sm:self-start flex items-center justify-center gap-3 px-8 py-4 text-sm font-bold tracking-wide transition-all hover:opacity-90 disabled:opacity-60 mt-1"
                       style={{
                         background: "#d4af37",
                         color: "#000",

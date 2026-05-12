@@ -34,10 +34,11 @@ export default function Navigation() {
     <>
       {/* ── Gold announcement strip ── */}
       <div
-        className="fixed top-0 left-0 right-0 z-50 text-center py-1.5 text-[10px] tracking-[0.3em] uppercase font-bold"
+        className="fixed top-0 left-0 right-0 z-50 text-center py-1.5 text-[9px] sm:text-[10px] tracking-[0.15em] sm:tracking-[0.3em] uppercase font-bold overflow-hidden whitespace-nowrap"
         style={{ background: "#000000", color: "#d4af37" }}
       >
-        Web Development &amp; Digital Agency&nbsp;&nbsp;·&nbsp;&nbsp;Australia &amp; Global&nbsp;&nbsp;·&nbsp;&nbsp;Est. 2017
+        <span className="sm:hidden">Premium Digital Agency&nbsp;·&nbsp;Australia</span>
+        <span className="hidden sm:inline">Web Development &amp; Digital Agency&nbsp;&nbsp;·&nbsp;&nbsp;Australia &amp; Global&nbsp;&nbsp;·&nbsp;&nbsp;Est. 2017</span>
       </div>
 
       {/* ── Main header (offset by strip) ── */}

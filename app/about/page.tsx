@@ -7,9 +7,15 @@ import ConsultationCTA from "@/components/ConsultationCTA";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "About Us | Goldenlining Solution",
+  title: "About Goldenlining Solution | Premium Digital Agency Since 2017",
   description:
-    "Learn about Goldenlining Solution — our story, mission, values, and the team behind Australia's premium digital transformation agency.",
+    "Since 2017, Goldenlining Solution has delivered 600+ premium digital projects across Australia and globally. Learn our story, mission & values.",
+  alternates: { canonical: "https://goldenlining.com.au/about" },
+  openGraph: {
+    title: "About Goldenlining Solution | Premium Digital Agency Since 2017",
+    description: "Since 2017, Goldenlining Solution has delivered 600+ digital projects globally. Learn our story, values & team.",
+    url: "https://goldenlining.com.au/about",
+  },
 };
 
 export default function AboutPage() {

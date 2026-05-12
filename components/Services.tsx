@@ -59,14 +59,14 @@ export default function Services() {
         <div className="absolute top-0 left-0 right-0 h-1 transition-all duration-500"
           style={{ background: `linear-gradient(90deg, transparent, ${active.color}, transparent)` }} />
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           {/* Header */}
-          <motion.div className="text-center mb-14"
+          <motion.div className="text-center mb-10 sm:mb-14"
             initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }}>
             <span className="text-xs tracking-[0.3em] font-semibold uppercase mb-3 block transition-colors duration-300" style={{ color: active.color }}>
               What We Offer
             </span>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
               Premium Digital <span style={{ color: active.color }}>Services</span>
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto text-base leading-relaxed">

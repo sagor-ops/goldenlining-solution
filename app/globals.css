@@ -177,7 +177,24 @@ body {
 
 /* ── Section spacing ── */
 .section-padding { padding: 7rem 0; }
-@media (max-width: 768px) { .section-padding { padding: 4rem 0; } }
+@media (max-width: 1024px) { .section-padding { padding: 5rem 0; } }
+@media (max-width: 768px)  { .section-padding { padding: 3.5rem 0; } }
+@media (max-width: 480px)  { .section-padding { padding: 2.5rem 0; } }
+
+/* ── Stats grid: suppress right border on right-column cells in 2-col mode ── */
+@media (max-width: 767px) {
+  .stats-cell:nth-child(2n) { border-right: none !important; }
+}
+
+/* ── Responsive modal padding ── */
+@media (max-width: 640px) {
+  .modal-pad-x { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+  .modal-pad-y { padding-top: 1.25rem !important; padding-bottom: 1.25rem !important; }
+}
+
+/* ── Prevent horizontal overflow globally ── */
+img, svg, video, iframe { max-width: 100%; }
+table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 
 /* ── Marquee ── */
 @keyframes marquee {

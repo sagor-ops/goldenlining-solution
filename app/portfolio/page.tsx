@@ -5,9 +5,16 @@ import Portfolio from "@/components/Portfolio";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Portfolio | Goldenlining Solution",
+  title: "Portfolio — 600+ Premium Digital Projects | Goldenlining Solution",
   description:
-    "Browse our curated portfolio of premium digital projects — websites, branding, ecommerce, and marketing campaigns delivered for ambitious businesses worldwide.",
+    "Browse 600+ premium digital projects — websites, ecommerce stores, branding, SEO & Google Ads campaigns delivered for businesses across Australia, UK, NZ & beyond.",
+  keywords: ["web design portfolio", "digital agency portfolio", "website examples Australia", "ecommerce portfolio"],
+  alternates: { canonical: "https://goldenlining.com.au/portfolio" },
+  openGraph: {
+    title: "Portfolio — 600+ Premium Digital Projects | Goldenlining Solution",
+    description: "600+ premium websites, ecommerce, branding & SEO projects. See our work for businesses across Australia and globally.",
+    url: "https://goldenlining.com.au/portfolio",
+  },
 };
 
 export default function PortfolioPage() {

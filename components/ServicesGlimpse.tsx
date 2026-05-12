@@ -32,7 +32,7 @@ export default function ServicesGlimpse() {
       {/* Grid overlay */}
       <div className="absolute inset-0 grid-overlay opacity-[0.12] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 py-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 py-10 sm:py-12 relative z-10">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-8">
           <div>
             <motion.p

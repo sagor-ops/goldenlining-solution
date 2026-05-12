@@ -33,8 +33,8 @@ export default function WhyChooseUs() {
     <section ref={sectionRef} className="relative overflow-hidden" style={{ background: "#ffffff" }}>
 
       {/* ── Main grid ── */}
-      <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28">
-        <div className="grid lg:grid-cols-[1fr_1fr] gap-12 lg:gap-20 items-start">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 py-12 sm:py-20 lg:py-28">
+        <div className="grid lg:grid-cols-[1fr_1fr] gap-10 lg:gap-20 items-start">
 
           {/* ── Left ── */}
           <div className="lg:sticky lg:top-32 flex flex-col gap-6">

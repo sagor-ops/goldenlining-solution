@@ -94,7 +94,7 @@ export default function PortfolioScroll() {
 
       {/* Header */}
       <motion.div
-        className="max-w-7xl mx-auto px-6 mb-8 flex items-end justify-between"
+        className="max-w-7xl mx-auto px-5 sm:px-6 mb-6 sm:mb-8 flex items-end justify-between"
         initial={{ opacity: 0, y: 16 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}

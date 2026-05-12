@@ -49,9 +49,9 @@ export default function Team() {
       <div className="absolute bottom-0 right-0 w-[500px] h-[300px] rounded-full blur-3xl opacity-[0.04] pointer-events-none"
         style={{ background: "radial-gradient(circle, #d4af37, transparent)" }} />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-16">
           <motion.span
             className="text-xs tracking-[0.3em] text-gold-500 uppercase font-medium mb-3 block"
             initial={{ opacity: 0 }}
@@ -60,7 +60,7 @@ export default function Team() {
             The Team
           </motion.span>
           <motion.h2
-            className="font-display text-4xl md:text-6xl font-bold mb-5"
+            className="font-display text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-5"
             style={{ color: "#111111" }}
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}

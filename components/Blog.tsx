@@ -22,13 +22,13 @@ export default function Blog() {
     <section id="blog" ref={sectionRef} className="section-padding relative overflow-hidden" style={{ background: "#ffffff" }}>
       <div className="absolute inset-0 dot-pattern pointer-events-none opacity-50" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
           <div>
             <motion.span className="text-xs tracking-[0.3em] text-gold-600 uppercase font-semibold mb-3 block"
               initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}}>Insights</motion.span>
-            <motion.h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900"
+            <motion.h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900"
               initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.1 }}>
               Premium <span style={{ color: "#d4af37" }}>Insights</span>
             </motion.h2>
