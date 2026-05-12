@@ -108,7 +108,7 @@ export default function Contact() {
               {[
                 { label: "Phone",    value: "+61 480 684 500",              href: "tel:+61480684500" },
                 { label: "Email",    value: "goldenliningsolution@gmail.com", href: "mailto:goldenliningsolution@gmail.com" },
-                { label: "Location", value: "Australia & Global",            href: null },
+                { label: "Location", value: "Croydon Park, SA 5008", href: "https://www.google.com/maps/search/?api=1&query=Croydon+Park+South+Australia+5008" },
               ].map((item) => (
                 <div key={item.label} className="flex items-center gap-3 text-sm">
                   <span className="text-[10px] tracking-widest uppercase font-bold w-16 shrink-0" style={{ color: "rgba(212,175,55,0.5)" }}>
@@ -116,7 +116,12 @@ export default function Contact() {
                   </span>
                   <span className="h-px w-4" style={{ background: "rgba(212,175,55,0.3)" }} />
                   {item.href ? (
-                    <a href={item.href} className="font-medium text-white hover:text-yellow-400 transition-colors">
+                    <a
+                      href={item.href}
+                      target={item.href.startsWith("http") ? "_blank" : undefined}
+                      rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      className="font-medium text-white hover:text-yellow-400 transition-colors"
+                    >
                       {item.value}
                     </a>
                   ) : (

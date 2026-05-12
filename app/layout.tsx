@@ -73,7 +73,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               description: "Premium digital agency specialising in web design, branding, SEO, and digital transformation.",
               url: "https://goldenlining.com.au",
               telephone: "+61-480684500",
-              email: "sobur112@gmail.com",
+              email: "goldenliningsolution@gmail.com",
               priceRange: "$$",
               serviceType: ["Web Design", "Branding", "SEO", "Google Ads", "Ecommerce", "Logo Design"],
               areaServed: "AU",

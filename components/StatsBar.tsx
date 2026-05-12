@@ -49,14 +49,14 @@ export default function StatsBar() {
             >
               <div className="absolute inset-0 surface-light" />
               <div
-                className="text-4xl md:text-5xl font-extrabold mb-2 relative z-10 gold-text-animated"
-                style={{ textShadow: "0 0 30px rgba(212,175,55,0.7)" }}
+                className="text-4xl md:text-5xl font-extrabold mb-2 relative z-10 text-white"
+                style={{ textShadow: "0 0 30px rgba(255,255,255,0.2)" }}
               >
                 {stat.value}
               </div>
               <div
                 className="text-[10px] tracking-[0.25em] uppercase font-semibold relative z-10"
-                style={{ color: "rgba(255,255,255,0.45)" }}
+                style={{ color: "#ffffff" }}
               >
                 {stat.label}
               </div>

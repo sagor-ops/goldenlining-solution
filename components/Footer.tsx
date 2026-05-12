@@ -85,10 +85,10 @@ export default function Footer() {
                 +61 480 684 500
               </a>
               <a
-                href="mailto:sobur112@gmail.com"
+                href="mailto:goldenliningsolution@gmail.com"
                 className="block text-sm text-gray-400 hover:text-gold-400 transition-colors"
               >
-                sobur112@gmail.com
+                goldenliningsolution@gmail.com
               </a>
             </div>
 

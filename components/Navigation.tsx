@@ -35,7 +35,7 @@ export default function Navigation() {
       {/* ── Gold announcement strip ── */}
       <div
         className="fixed top-0 left-0 right-0 z-50 text-center py-1.5 text-[10px] tracking-[0.3em] uppercase font-bold"
-        style={{ background: "#d4af37", color: "#000000" }}
+        style={{ background: "#000000", color: "#d4af37" }}
       >
         Web Development &amp; Digital Agency&nbsp;&nbsp;·&nbsp;&nbsp;Australia &amp; Global&nbsp;&nbsp;·&nbsp;&nbsp;Est. 2017
       </div>
