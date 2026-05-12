@@ -1,4 +1,16 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
+import Navigation from "@/components/Navigation";
+import Hero from "@/components/Hero";
+import TrustBar from "@/components/TrustBar";
+import WhyChooseUs from "@/components/WhyChooseUs";
+
+// Below-fold components — code-split and deferred
+const StatsBar       = dynamic(() => import("@/components/StatsBar"));
+const PortfolioScroll = dynamic(() => import("@/components/PortfolioScroll"));
+const ContactStrip   = dynamic(() => import("@/components/ContactStrip"));
+const ConsultationCTA = dynamic(() => import("@/components/ConsultationCTA"));
+const Footer         = dynamic(() => import("@/components/Footer"));
 
 export const metadata: Metadata = {
   title: "Goldenlining Solution | #1 Web Design & SEO Agency — Australia",
@@ -13,21 +25,9 @@ export const metadata: Metadata = {
   },
 };
 
-import Navigation from "@/components/Navigation";
-import Hero from "@/components/Hero";
-import TrustBar from "@/components/TrustBar";
-import WhyChooseUs from "@/components/WhyChooseUs";
-import StatsBar from "@/components/StatsBar";
-import PortfolioScroll from "@/components/PortfolioScroll";
-import ContactStrip from "@/components/ContactStrip";
-import ConsultationCTA from "@/components/ConsultationCTA";
-import Footer from "@/components/Footer";
-import LoadingScreen from "@/components/LoadingScreen";
-
 export default function HomePage() {
   return (
     <main>
-      <LoadingScreen />
       <Navigation />
       <Hero />
       <TrustBar />

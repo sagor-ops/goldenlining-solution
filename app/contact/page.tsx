@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Navigation from "@/components/Navigation";
 import PageHero from "@/components/PageHero";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+
+const Contact = dynamic(() => import("@/components/Contact"));
+const Footer  = dynamic(() => import("@/components/Footer"));
 
 export const metadata: Metadata = {
   title: "Contact Us — Free Consultation | Goldenlining Solution",

@@ -69,7 +69,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 lg:col-span-2">
             <Link href="/" className="inline-block mb-6 group">
-              <img src="/logo.svg" alt="Goldenlining Solution" className="h-14 w-auto group-hover:opacity-80 transition-opacity" />
+              <img src="/logo.svg" alt="Goldenlining Solution" className="h-14 w-auto group-hover:opacity-80 transition-opacity" width="200" height="56" decoding="async" />
             </Link>
 
             <p className="text-gray-500 text-sm leading-relaxed mb-6 max-w-xs">

@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Navigation from "@/components/Navigation";
 import PageHero from "@/components/PageHero";
-import Portfolio from "@/components/Portfolio";
-import Footer from "@/components/Footer";
+
+const Portfolio = dynamic(() => import("@/components/Portfolio"));
+const Footer    = dynamic(() => import("@/components/Footer"));
 
 export const metadata: Metadata = {
   title: "Portfolio — 600+ Premium Digital Projects | Goldenlining Solution",

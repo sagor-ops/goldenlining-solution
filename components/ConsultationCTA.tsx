@@ -3,7 +3,9 @@
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight, Star, Quote } from "lucide-react";
-import ConsultationModal from "./ConsultationModal";
+import dynamic from "next/dynamic";
+
+const ConsultationModal = dynamic(() => import("./ConsultationModal"), { ssr: false });
 
 const testimonials = [
   {

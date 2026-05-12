@@ -74,6 +74,16 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <meta name="theme-color" content="#0d1f14" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
+        {/* Preload LCP hero image so browser fetches it immediately */}
+        <link
+          rel="preload"
+          as="image"
+          href="/hero-strip.jpg.png"
+          fetchPriority="high"
+        />
+        {/* Google Fonts preconnect (next/font already does this, but belt & braces) */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

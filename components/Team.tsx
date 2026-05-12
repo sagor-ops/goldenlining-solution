@@ -2,8 +2,10 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import dynamic from "next/dynamic";
 import Tilt3D from "./Tilt3D";
-import JoinTeamModal from "./JoinTeamModal";
+
+const JoinTeamModal = dynamic(() => import("./JoinTeamModal"), { ssr: false });
 
 const team = [
   {

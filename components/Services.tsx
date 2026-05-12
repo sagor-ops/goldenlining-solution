@@ -8,7 +8,8 @@ import {
   Palette, Aperture, BookOpen, Printer, Camera,
   ArrowRight, ChevronRight
 } from "lucide-react";
-import ConsultationModal from "./ConsultationModal";
+import dynamic from "next/dynamic";
+const ConsultationModal = dynamic(() => import("./ConsultationModal"), { ssr: false });
 import Tilt3D from "./Tilt3D";
 
 const categories = [

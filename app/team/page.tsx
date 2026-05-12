@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Navigation from "@/components/Navigation";
 import PageHero from "@/components/PageHero";
-import Team from "@/components/Team";
-import Footer from "@/components/Footer";
+
+const Team   = dynamic(() => import("@/components/Team"));
+const Footer = dynamic(() => import("@/components/Footer"));
 
 export const metadata: Metadata = {
   title: "Our Team | Web Designers, Developers & SEO Experts | Goldenlining Solution",

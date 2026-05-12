@@ -1,10 +1,12 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Script from "next/script";
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
-import BlogPostContent from "@/components/BlogPostContent";
 import { blogPosts, getPostBySlug } from "@/lib/blog-posts";
+
+const BlogPostContent = dynamic(() => import("@/components/BlogPostContent"));
+const Footer          = dynamic(() => import("@/components/Footer"));
 
 interface Props {
   params: Promise<{ slug: string }>;

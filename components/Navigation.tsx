@@ -5,7 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import ConsultationModal from "./ConsultationModal";
+import dynamic from "next/dynamic";
+
+const ConsultationModal = dynamic(() => import("./ConsultationModal"), { ssr: false });
 
 const navLinks = [
   { label: "Services",  href: "/services",  num: "01" },
@@ -79,6 +81,9 @@ export default function Navigation() {
                 src="/logo.svg"
                 alt="Goldenlining Solution"
                 className="h-10 w-auto group-hover:opacity-90 transition-opacity"
+                width="160"
+                height="40"
+                decoding="async"
               />
             </Link>
 

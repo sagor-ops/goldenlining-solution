@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Navigation from "@/components/Navigation";
 import PageHero from "@/components/PageHero";
 import Services from "@/components/Services";
-import ConsultationCTA from "@/components/ConsultationCTA";
-import Footer from "@/components/Footer";
+
+const ConsultationCTA = dynamic(() => import("@/components/ConsultationCTA"));
+const Footer          = dynamic(() => import("@/components/Footer"));
 
 export const metadata: Metadata = {
   title: "Web Design, SEO, Google Ads & Branding Services | Goldenlining Solution",

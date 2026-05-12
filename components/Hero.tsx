@@ -4,7 +4,9 @@ import { useRef, useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
-import ConsultationModal from "./ConsultationModal";
+import dynamic from "next/dynamic";
+
+const ConsultationModal = dynamic(() => import("./ConsultationModal"), { ssr: false });
 
 
 const trustItems = ["No lock-in contracts", "Free initial consultation", "Results guaranteed"];
@@ -33,7 +35,7 @@ export default function Hero() {
         onMouseMove={handleMouseMove}
       >
 
-        {/* ── Full-screen hero image ── */}
+        {/* ── Full-screen hero image (preloaded in layout <head>) ── */}
         <div
           className="absolute inset-0 z-0"
           style={{
@@ -43,6 +45,7 @@ export default function Hero() {
             backgroundPosition: "0% 40%",
             filter: "saturate(1.2) brightness(0.75)",
             animation: "hero-pan 25s linear infinite alternate",
+            willChange: "background-position",
           }}
         />
 
