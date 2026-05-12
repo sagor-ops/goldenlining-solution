@@ -102,7 +102,7 @@ export default function Hero() {
 
         {/* ── 3D Orbital rings — gold ── */}
         <div
-          className="absolute top-28 right-14 w-32 h-32 pointer-events-none hidden lg:block z-[4]"
+          className="absolute top-1/2 -translate-y-1/2 right-[12%] w-48 h-48 pointer-events-none hidden lg:block z-[4]"
           style={{ perspective: "400px" }}
         >
           {[
@@ -134,127 +134,126 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* ── Main content ── */}
-        <div
-          className="relative z-10 max-w-5xl mx-auto px-6 text-center"
-          style={{
-            paddingTop: "10.5rem",
-            paddingBottom: "5rem",
-            transform: `perspective(1200px) rotateX(${mouse.y * -1.5}deg) rotateY(${mouse.x * 1.5}deg)`,
-            transition: "transform 0.4s ease",
-          }}
-        >
-          {/* Eyebrow */}
-          <motion.div
-            className="inline-flex items-center gap-3 mb-10"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+        {/* ── Main content — left-aligned ── */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-16" style={{ paddingTop: "11rem", paddingBottom: "6rem" }}>
+          <div
+            className="max-w-2xl"
+            style={{
+              transform: `perspective(1200px) rotateX(${mouse.y * -1.2}deg) rotateY(${mouse.x * 1.2}deg)`,
+              transition: "transform 0.4s ease",
+            }}
           >
-            <div className="h-px w-8" style={{ background: "#d4af37" }} />
-            <span className="text-[10px] tracking-[0.35em] uppercase font-bold" style={{ color: "#d4af37" }}>
-              Premium Digital Agency
-            </span>
-            <div className="h-px w-8" style={{ background: "#d4af37" }} />
-          </motion.div>
-
-          {/* Headline */}
-          <motion.h1
-            className="font-display font-bold leading-[1.02] tracking-tight mb-6"
-            style={{ transformStyle: "preserve-3d" }}
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
-          >
-            <span
-              className="block text-white"
-              style={{ fontSize: "clamp(2.8rem, 7vw, 5.5rem)", transform: "translateZ(0px)" }}
+            {/* Eyebrow */}
+            <motion.div
+              className="flex items-center gap-3 mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
             >
-              We Build Digital
-            </span>
-            <span
-              className="block gold-text-animated text-3d"
-              style={{ fontSize: "clamp(3.2rem, 8.5vw, 7rem)", transform: "translateZ(30px)", lineHeight: 1 }}
-            >
-              Experiences
-            </span>
-            <span
-              className="block text-white"
-              style={{ fontSize: "clamp(2rem, 5vw, 4rem)", transform: "translateZ(0px)", opacity: 0.9 }}
-            >
-              That Elevate Brands
-            </span>
-          </motion.h1>
-
-          {/* Gold divider */}
-          <motion.div
-            className="flex items-center justify-center gap-4 mb-8"
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={{ opacity: 1, scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 0.65 }}
-          >
-            <div className="h-px flex-1 max-w-[120px]" style={{ background: "linear-gradient(90deg, transparent, #d4af37)" }} />
-            <div className="w-1.5 h-1.5 rotate-45" style={{ background: "#d4af37" }} />
-            <div className="h-px flex-1 max-w-[120px]" style={{ background: "linear-gradient(90deg, #d4af37, transparent)" }} />
-          </motion.div>
-
-          {/* Subtext */}
-          <motion.p
-            className="text-base md:text-lg max-w-xl mx-auto mb-10 leading-relaxed font-light"
-            style={{ color: "rgba(255,255,255,0.72)" }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-          >
-            From strategy to execution — websites, branding, SEO &amp; AI-powered digital systems for ambitious businesses worldwide.
-          </motion.p>
-
-          {/* CTA buttons */}
-          <motion.div
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.85 }}
-          >
-            <button
-              onClick={() => setModalOpen(true)}
-              className="group flex items-center gap-3 px-9 py-4 text-sm font-bold tracking-wide transition-all hover:opacity-90"
-              style={{
-                background: "#d4af37",
-                color: "#0d1a08",
-                clipPath: "polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%)",
-                boxShadow: "0 8px 32px rgba(212,175,55,0.45)",
-              }}
-            >
-              Book Free Consultation
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </button>
-            <Link
-              href="/portfolio"
-              className="group flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-wide border transition-all hover:bg-white/10"
-              style={{ color: "rgba(255,255,255,0.8)", borderColor: "rgba(255,255,255,0.3)" }}
-            >
-              View Our Work
-              <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </Link>
-          </motion.div>
-
-          {/* Trust items */}
-          <motion.div
-            className="flex flex-wrap items-center justify-center gap-6 mb-20"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.0 }}
-          >
-            {trustItems.map((item) => (
-              <span key={item} className="flex items-center gap-2 text-xs font-medium tracking-wide"
-                style={{ color: "rgba(255,255,255,0.5)" }}>
-                <span className="w-1 h-1 rotate-45 shrink-0" style={{ background: "#d4af37" }} />
-                {item}
+              <div className="h-px w-8" style={{ background: "#d4af37" }} />
+              <span className="text-[10px] tracking-[0.35em] uppercase font-bold" style={{ color: "#d4af37" }}>
+                Web Development &amp; Digital Agency
               </span>
-            ))}
-          </motion.div>
+            </motion.div>
 
+            {/* Headline */}
+            <motion.h1
+              className="font-display font-bold leading-[1.02] tracking-tight mb-6"
+              style={{ transformStyle: "preserve-3d" }}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
+            >
+              <span
+                className="block text-white"
+                style={{ fontSize: "clamp(2.6rem, 6vw, 5rem)", transform: "translateZ(0px)" }}
+              >
+                We Build Digital
+              </span>
+              <span
+                className="block gold-text-animated text-3d"
+                style={{ fontSize: "clamp(3rem, 7.5vw, 6.5rem)", transform: "translateZ(30px)", lineHeight: 1 }}
+              >
+                Experiences
+              </span>
+              <span
+                className="block text-white"
+                style={{ fontSize: "clamp(1.8rem, 4.5vw, 3.8rem)", transform: "translateZ(0px)", opacity: 0.9 }}
+              >
+                That Elevate Brands
+              </span>
+            </motion.h1>
+
+            {/* Gold divider */}
+            <motion.div
+              className="flex items-center gap-4 mb-7"
+              initial={{ opacity: 0, scaleX: 0 }}
+              animate={{ opacity: 1, scaleX: 1 }}
+              transition={{ duration: 0.8, delay: 0.65 }}
+              style={{ transformOrigin: "left" }}
+            >
+              <div className="h-px w-16" style={{ background: "#d4af37" }} />
+              <div className="w-1.5 h-1.5 rotate-45" style={{ background: "#d4af37" }} />
+              <div className="h-px w-32" style={{ background: "linear-gradient(90deg, #d4af37, transparent)" }} />
+            </motion.div>
+
+            {/* Subtext */}
+            <motion.p
+              className="text-base md:text-lg max-w-lg mb-10 leading-relaxed font-light"
+              style={{ color: "rgba(255,255,255,0.72)" }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+            >
+              From strategy to execution — websites, branding, SEO &amp; AI-powered digital systems for ambitious businesses worldwide.
+            </motion.p>
+
+            {/* CTA buttons */}
+            <motion.div
+              className="flex flex-col sm:flex-row items-start gap-4 mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.85 }}
+            >
+              <button
+                onClick={() => setModalOpen(true)}
+                className="group flex items-center gap-3 px-9 py-4 text-sm font-bold tracking-wide transition-all hover:opacity-90"
+                style={{
+                  background: "#d4af37",
+                  color: "#0d1a08",
+                  clipPath: "polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%)",
+                  boxShadow: "0 8px 32px rgba(212,175,55,0.45)",
+                }}
+              >
+                Book Free Consultation
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+              <Link
+                href="/portfolio"
+                className="group flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-wide border transition-all hover:bg-white/10"
+                style={{ color: "rgba(255,255,255,0.8)", borderColor: "rgba(255,255,255,0.3)" }}
+              >
+                View Our Work
+                <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </Link>
+            </motion.div>
+
+            {/* Trust items */}
+            <motion.div
+              className="flex flex-wrap items-center gap-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.0 }}
+            >
+              {trustItems.map((item) => (
+                <span key={item} className="flex items-center gap-2 text-xs font-medium tracking-wide"
+                  style={{ color: "rgba(255,255,255,0.5)" }}>
+                  <span className="w-1 h-1 rotate-45 shrink-0" style={{ background: "#d4af37" }} />
+                  {item}
+                </span>
+              ))}
+            </motion.div>
+          </div>
         </div>
 
         {/* Bottom fade into next section */}
