@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import ConsultationCTA from "@/components/ConsultationCTA";
 import BlogPostContent from "@/components/BlogPostContent";
 import { blogPosts, getPostBySlug } from "@/lib/blog-posts";
 
@@ -40,7 +39,6 @@ export default async function BlogPostPage({ params }: Props) {
     <main>
       <Navigation />
       <BlogPostContent post={post} related={related} />
-      <ConsultationCTA />
       <Footer />
     </main>
   );

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Navigation from "@/components/Navigation";
 import PageHero from "@/components/PageHero";
 import About from "@/components/About";
-import WhyChooseUs from "@/components/WhyChooseUs";
+import ServicesGlimpse from "@/components/ServicesGlimpse";
 import ConsultationCTA from "@/components/ConsultationCTA";
 import Footer from "@/components/Footer";
 
@@ -23,7 +23,7 @@ export default function AboutPage() {
         description="Goldenlining Solution was built with one mission — to help businesses transform ideas into world-class digital experiences that drive real, measurable growth."
       />
       <About />
-      <WhyChooseUs />
+      <ServicesGlimpse />
       <ConsultationCTA />
       <Footer />
     </main>

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Navigation from "@/components/Navigation";
 import PageHero from "@/components/PageHero";
 import Portfolio from "@/components/Portfolio";
-import ConsultationCTA from "@/components/ConsultationCTA";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -22,7 +21,6 @@ export default function PortfolioPage() {
         description="A curated showcase of digital experiences we have crafted for ambitious businesses across Australia and globally — each one built to the highest standard."
       />
       <Portfolio />
-      <ConsultationCTA />
       <Footer />
     </main>
   );

@@ -40,24 +40,24 @@ function Card({ p }: { p: typeof projects[0] }) {
       rel="noopener noreferrer"
       className="group shrink-0 flex items-center gap-4 px-5 py-3.5 mx-2 transition-all duration-300"
       style={{
-        background: "rgba(255,255,255,0.03)",
-        border: `1px solid rgba(255,255,255,0.07)`,
+        background: "#f9f9f9",
+        border: "1px solid #ececec",
         minWidth: "260px",
       }}
       onMouseEnter={(e) => {
-        (e.currentTarget as HTMLAnchorElement).style.background = `${p.accent}12`;
-        (e.currentTarget as HTMLAnchorElement).style.borderColor = `${p.accent}40`;
+        (e.currentTarget as HTMLAnchorElement).style.background = `${p.accent}0e`;
+        (e.currentTarget as HTMLAnchorElement).style.borderColor = `${p.accent}50`;
       }}
       onMouseLeave={(e) => {
-        (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.03)";
-        (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.07)";
+        (e.currentTarget as HTMLAnchorElement).style.background = "#f9f9f9";
+        (e.currentTarget as HTMLAnchorElement).style.borderColor = "#ececec";
       }}
     >
       {/* Accent dot */}
       <div className="w-2 h-2 rounded-full shrink-0" style={{ background: p.accent }} />
 
       <div className="flex flex-col min-w-0">
-        <span className="text-xs font-bold text-white truncate leading-tight">{p.title}</span>
+        <span className="text-xs font-bold text-gray-800 truncate leading-tight">{p.title}</span>
         <span className="text-[10px] truncate mt-0.5 transition-colors duration-200 group-hover:opacity-90" style={{ color: p.accent }}>
           {p.url}
         </span>
@@ -84,12 +84,12 @@ export default function PortfolioScroll() {
     <section
       ref={ref}
       className="relative overflow-hidden py-14"
-      style={{ background: "linear-gradient(180deg, #0d1f14 0%, #0c1c12 40%, #0d1f14 100%)" }}
+      style={{ background: "#ffffff", borderTop: "1px solid #f0f0f0", borderBottom: "1px solid #f0f0f0" }}
     >
-      {/* Very subtle gold mid-glow */}
+      {/* Subtle gold mid-glow */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse at 50% 50%, rgba(212,175,55,0.04) 0%, transparent 65%)" }}
+        style={{ background: "radial-gradient(ellipse at 50% 50%, rgba(212,175,55,0.03) 0%, transparent 65%)" }}
       />
 
       {/* Header */}
@@ -103,7 +103,7 @@ export default function PortfolioScroll() {
           <p className="text-[10px] tracking-[0.35em] uppercase font-bold mb-1" style={{ color: "#d4af37" }}>
             Our Work
           </p>
-          <h3 className="font-display font-bold text-white" style={{ fontSize: "clamp(1.4rem, 3vw, 2rem)" }}>
+          <h3 className="font-display font-bold text-black" style={{ fontSize: "clamp(1.4rem, 3vw, 2rem)" }}>
             600+ Projects Delivered Worldwide
           </h3>
         </div>
@@ -139,9 +139,9 @@ export default function PortfolioScroll() {
 
       {/* Fade edges */}
       <div className="absolute inset-y-0 left-0 w-24 pointer-events-none z-10"
-        style={{ background: "linear-gradient(to right, #0d1f14, transparent)" }} />
+        style={{ background: "linear-gradient(to right, #ffffff, transparent)" }} />
       <div className="absolute inset-y-0 right-0 w-24 pointer-events-none z-10"
-        style={{ background: "linear-gradient(to left, #0d1f14, transparent)" }} />
+        style={{ background: "linear-gradient(to left, #ffffff, transparent)" }} />
     </section>
   );
 }

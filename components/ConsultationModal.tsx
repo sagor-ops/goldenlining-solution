@@ -110,9 +110,9 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
             <motion.div
               className="w-full max-w-2xl max-h-[90vh] overflow-y-auto relative rounded-2xl"
               style={{
-                background: "linear-gradient(135deg, #0a1628 0%, #050d1f 100%)",
-                border: "1px solid rgba(212,175,55,0.15)",
-                boxShadow: "0 0 60px rgba(212,175,55,0.1), 0 40px 80px rgba(0,0,0,0.6)",
+                background: "#ffffff",
+                border: "1px solid #e5e5e5",
+                boxShadow: "0 24px 80px rgba(0,0,0,0.18)",
               }}
               initial={{ scale: 0.9, y: 40, opacity: 0 }}
               animate={{ scale: 1, y: 0, opacity: 1 }}
@@ -120,54 +120,48 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Header */}
-              <div className="relative p-8 pb-6 border-b border-white/5">
-                <div
-                  className="absolute top-0 left-0 right-0 h-px"
-                  style={{
-                    background: "linear-gradient(90deg, transparent, #d4af37, transparent)",
-                  }}
-                />
+              {/* Gold top bar */}
+              <div className="h-0.5 w-full rounded-t-2xl" style={{ background: "linear-gradient(90deg, transparent, #d4af37, transparent)" }} />
 
+              {/* Header */}
+              <div className="relative p-8 pb-6" style={{ borderBottom: "1px solid #f0f0f0" }}>
                 <button
                   onClick={onClose}
-                  className="absolute top-5 right-5 w-8 h-8 rounded-full glass flex items-center justify-center text-gray-500 hover:text-white hover:border-white/20 border border-white/10 transition-all duration-200"
+                  className="absolute top-5 right-5 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200"
+                  style={{ background: "#f5f5f5", border: "1px solid #e5e5e5" }}
+                  onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = "rgba(212,175,55,0.1)")}
+                  onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.background = "#f5f5f5")}
                 >
-                  <X size={14} />
+                  <X size={14} style={{ color: "#888" }} />
                 </button>
 
                 <div className="flex items-center gap-3 mb-2">
-                  <div
-                    className="w-8 h-8 rounded-xl flex items-center justify-center"
-                    style={{ background: "rgba(212,175,55,0.15)", border: "1px solid rgba(212,175,55,0.25)" }}
-                  >
-                    <Calendar size={15} className="text-gold-400" />
+                  <div className="w-8 h-8 rounded-xl flex items-center justify-center"
+                    style={{ background: "rgba(212,175,55,0.1)", border: "1px solid rgba(212,175,55,0.25)" }}>
+                    <Calendar size={15} style={{ color: "#d4af37" }} />
                   </div>
-                  <span className="text-xs tracking-[0.3em] text-gold-500 uppercase font-medium">
+                  <span className="text-xs tracking-[0.3em] uppercase font-bold" style={{ color: "#d4af37" }}>
                     Free Consultation
                   </span>
                 </div>
 
-                <h2 className="font-display text-2xl font-bold text-white mb-1">
+                <h2 className="font-display text-2xl font-bold mb-1" style={{ color: "#111" }}>
                   Book Your Free 30-Minute Session
                 </h2>
-                <p className="text-gray-400 text-sm">
+                <p className="text-sm" style={{ color: "#6b7280" }}>
                   Tell us about your project and we&apos;ll prepare a personalised strategy discussion.
                 </p>
 
                 {/* Trust badges */}
-                <div className="flex gap-4 mt-4 text-xs text-gray-600">
+                <div className="flex flex-wrap gap-4 mt-4 text-xs" style={{ color: "#9ca3af" }}>
                   <div className="flex items-center gap-1.5">
-                    <Clock size={11} className="text-gold-600" />
-                    Same-day response
+                    <Clock size={11} style={{ color: "#d4af37" }} /> Same-day response
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <Shield size={11} className="text-gold-600" />
-                    100% confidential
+                    <Shield size={11} style={{ color: "#d4af37" }} /> 100% confidential
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <CheckCircle size={11} className="text-gold-600" />
-                    No obligation
+                    <CheckCircle size={11} style={{ color: "#d4af37" }} /> No obligation
                   </div>
                 </div>
               </div>
@@ -175,176 +169,109 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
               {/* Form or Success */}
               <div className="p-8">
                 {status === "success" ? (
-                  <motion.div
-                    className="text-center py-10"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
+                  <motion.div className="text-center py-10"
+                    initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }}
+                    transition={{ type: "spring", stiffness: 300 }}>
                     <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-5"
-                      style={{ background: "rgba(212,175,55,0.1)", border: "2px solid rgba(212,175,55,0.3)" }}
-                    >
-                      <CheckCircle size={36} className="text-gold-400" />
+                      style={{ background: "rgba(212,175,55,0.08)", border: "2px solid rgba(212,175,55,0.3)" }}>
+                      <CheckCircle size={36} style={{ color: "#d4af37" }} />
                     </div>
-                    <h3 className="font-display text-xl font-bold text-white mb-2">
-                      Your Consultation Request Has Been Received
+                    <h3 className="font-display text-xl font-bold mb-2" style={{ color: "#111" }}>
+                      Consultation Request Received!
                     </h3>
-                    <p className="text-gray-400 text-sm mb-4 leading-relaxed">
-                      Our team will contact you shortly to confirm your session details and prepare personalised insights for your business.
+                    <p className="text-sm mb-4 leading-relaxed" style={{ color: "#6b7280" }}>
+                      Our team will contact you shortly to confirm your session details and prepare personalised insights.
                     </p>
-                    <p className="text-xs text-gray-600">
-                      Expected response: <span className="text-white">Within 2 business hours</span>
+                    <p className="text-xs" style={{ color: "#9ca3af" }}>
+                      Expected response: <span style={{ color: "#111", fontWeight: 600 }}>Within 2 business hours</span>
                     </p>
-                    <button
-                      onClick={onClose}
-                      className="btn-gold mt-8 px-8 py-3 rounded-full text-sm font-semibold"
-                    >
+                    <button onClick={onClose} className="btn-gold mt-8 px-8 py-3 rounded-full text-sm font-semibold">
                       Close
                     </button>
                   </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-5">
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      <div>
-                        <label className="text-[10px] text-gray-500 tracking-widest uppercase mb-1.5 block">
-                          Full Name *
-                        </label>
-                        <input
-                          type="text"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleChange}
-                          required
-                          placeholder="Your full name"
-                          className="premium-input w-full rounded-xl px-4 py-3 text-sm"
-                        />
+                    {[
+                      [{ label: "Full Name *", name: "name", type: "text", placeholder: "Your full name", required: true },
+                       { label: "Company Name", name: "company", type: "text", placeholder: "Your company", required: false }],
+                      [{ label: "Email Address *", name: "email", type: "email", placeholder: "your@email.com", required: true },
+                       { label: "Phone Number", name: "phone", type: "tel", placeholder: "+61 xxx xxx xxx", required: false }],
+                    ].map((row, ri) => (
+                      <div key={ri} className="grid sm:grid-cols-2 gap-4">
+                        {row.map((field) => (
+                          <div key={field.name}>
+                            <label className="text-[10px] tracking-[0.25em] uppercase font-bold block mb-1.5" style={{ color: "rgba(212,175,55,0.8)" }}>
+                              {field.label}
+                            </label>
+                            <input type={field.type} name={field.name}
+                              value={formData[field.name as keyof typeof formData]}
+                              onChange={handleChange} required={field.required}
+                              placeholder={field.placeholder}
+                              className="w-full rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400"
+                              style={{ background: "#f9f9f9", border: "1px solid #e5e5e5", outline: "none" }}
+                              onFocus={(e) => (e.target.style.borderColor = "rgba(212,175,55,0.5)")}
+                              onBlur={(e) => (e.target.style.borderColor = "#e5e5e5")} />
+                          </div>
+                        ))}
                       </div>
-                      <div>
-                        <label className="text-[10px] text-gray-500 tracking-widest uppercase mb-1.5 block">
-                          Company Name
-                        </label>
-                        <input
-                          type="text"
-                          name="company"
-                          value={formData.company}
-                          onChange={handleChange}
-                          placeholder="Your company"
-                          className="premium-input w-full rounded-xl px-4 py-3 text-sm"
-                        />
-                      </div>
-                    </div>
+                    ))}
 
                     <div className="grid sm:grid-cols-2 gap-4">
-                      <div>
-                        <label className="text-[10px] text-gray-500 tracking-widest uppercase mb-1.5 block">
-                          Email Address *
-                        </label>
-                        <input
-                          type="email"
-                          name="email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          required
-                          placeholder="your@email.com"
-                          className="premium-input w-full rounded-xl px-4 py-3 text-sm"
-                        />
-                      </div>
-                      <div>
-                        <label className="text-[10px] text-gray-500 tracking-widest uppercase mb-1.5 block">
-                          Phone Number
-                        </label>
-                        <input
-                          type="tel"
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleChange}
-                          placeholder="+61 xxx xxx xxx"
-                          className="premium-input w-full rounded-xl px-4 py-3 text-sm"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      <div>
-                        <label className="text-[10px] text-gray-500 tracking-widest uppercase mb-1.5 block">
-                          Service Interested In
-                        </label>
-                        <select
-                          name="service"
-                          value={formData.service}
-                          onChange={handleChange}
-                          className="premium-input w-full rounded-xl px-4 py-3 text-sm appearance-none bg-transparent"
-                        >
-                          <option value="">Select a service</option>
-                          {services.map((s) => (
-                            <option key={s} value={s} style={{ background: "#0a1628" }}>
-                              {s}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-                      <div>
-                        <label className="text-[10px] text-gray-500 tracking-widest uppercase mb-1.5 block">
-                          Project Budget
-                        </label>
-                        <select
-                          name="budget"
-                          value={formData.budget}
-                          onChange={handleChange}
-                          className="premium-input w-full rounded-xl px-4 py-3 text-sm appearance-none bg-transparent"
-                        >
-                          <option value="">Select budget range</option>
-                          {budgets.map((b) => (
-                            <option key={b} value={b} style={{ background: "#0a1628" }}>
-                              {b}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
+                      {[
+                        { label: "Service Interested In", name: "service", options: services, placeholder: "Select a service" },
+                        { label: "Project Budget", name: "budget", options: budgets, placeholder: "Select budget range" },
+                      ].map((sel) => (
+                        <div key={sel.name}>
+                          <label className="text-[10px] tracking-[0.25em] uppercase font-bold block mb-1.5" style={{ color: "rgba(212,175,55,0.8)" }}>
+                            {sel.label}
+                          </label>
+                          <select name={sel.name} value={formData[sel.name as keyof typeof formData]}
+                            onChange={handleChange}
+                            className="w-full rounded-xl px-4 py-3 text-sm text-gray-800 appearance-none cursor-pointer"
+                            style={{ background: "#f9f9f9", border: "1px solid #e5e5e5", outline: "none" }}
+                            onFocus={(e) => (e.target.style.borderColor = "rgba(212,175,55,0.5)")}
+                            onBlur={(e) => (e.target.style.borderColor = "#e5e5e5")}>
+                            <option value="">{sel.placeholder}</option>
+                            {sel.options.map((o) => <option key={o} value={o}>{o}</option>)}
+                          </select>
+                        </div>
+                      ))}
                     </div>
 
                     <div>
-                      <label className="text-[10px] text-gray-500 tracking-widest uppercase mb-1.5 block">
+                      <label className="text-[10px] tracking-[0.25em] uppercase font-bold block mb-1.5" style={{ color: "rgba(212,175,55,0.8)" }}>
                         Tell Us About Your Project *
                       </label>
-                      <textarea
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        required
-                        rows={4}
-                        placeholder="Describe your project, goals, and any specific challenges you're facing..."
-                        className="premium-input w-full rounded-xl px-4 py-3 text-sm resize-none"
-                      />
+                      <textarea name="message" value={formData.message} onChange={handleChange}
+                        required rows={4} placeholder="Describe your project, goals, and any specific challenges..."
+                        className="w-full rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 resize-none"
+                        style={{ background: "#f9f9f9", border: "1px solid #e5e5e5", outline: "none" }}
+                        onFocus={(e) => (e.target.style.borderColor = "rgba(212,175,55,0.5)")}
+                        onBlur={(e) => (e.target.style.borderColor = "#e5e5e5")} />
                     </div>
 
-                    {/* Submit */}
-                    <button
-                      type="submit"
-                      disabled={status === "loading"}
+                    <button type="submit" disabled={status === "loading"}
                       className={`w-full py-4 rounded-xl text-sm font-semibold tracking-wide flex items-center justify-center gap-2 transition-all duration-300 ${
-                        status === "error"
-                          ? "bg-red-500/15 text-red-400 border border-red-500/30"
-                          : "btn-gold"
+                        status === "error" ? "" : "btn-gold"
                       }`}
-                    >
-                      {status === "loading" && (
-                        <div className="w-4 h-4 border-2 border-navy-900/30 border-t-navy-900 rounded-full animate-spin" />
-                      )}
+                      style={status === "error" ? { background: "#fef2f2", color: "#ef4444", border: "1px solid #fecaca" } : {}}>
+                      {status === "loading" && <div className="w-4 h-4 border-2 border-black/20 border-t-black rounded-full animate-spin" />}
                       {status === "error" && <AlertCircle size={16} />}
                       {status === "idle" && <Send size={16} />}
-
                       {status === "idle" && "Book Free Consultation"}
-                      {status === "loading" && "Submitting Your Request..."}
+                      {status === "loading" && "Submitting..."}
                       {status === "error" && "Something Went Wrong — Try Again"}
                     </button>
 
-                    <p className="text-[10px] text-gray-700 text-center">
+                    <p className="text-[10px] text-center" style={{ color: "#bbb" }}>
                       By submitting, you agree to our Privacy Policy. We never share your information.
                     </p>
                   </form>
                 )}
               </div>
+
+              {/* Gold bottom bar */}
+              <div className="h-0.5 w-full rounded-b-2xl" style={{ background: "linear-gradient(90deg, transparent, #d4af37, transparent)" }} />
             </motion.div>
           </motion.div>
         </>

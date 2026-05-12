@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Navigation from "@/components/Navigation";
 import PageHero from "@/components/PageHero";
 import Blog from "@/components/Blog";
-import ConsultationCTA from "@/components/ConsultationCTA";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -22,7 +21,6 @@ export default function BlogPage() {
         description="Expert thinking on digital strategy, SEO, AI visibility, branding, and the future of premium digital experiences — from the Goldenlining team."
       />
       <Blog />
-      <ConsultationCTA />
       <Footer />
     </main>
   );

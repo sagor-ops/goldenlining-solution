@@ -86,7 +86,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
     >
       <Tilt3D intensity={7} scale={1.03}>
       <div className="relative rounded-2xl overflow-hidden"
-        style={{ boxShadow: `0 8px 32px ${project.accent}18, 0 2px 8px rgba(0,0,0,0.5)` }}>
+        style={{ boxShadow: `0 4px 24px ${project.accent}15, 0 1px 4px rgba(0,0,0,0.08)`, border: "1px solid #ebebeb" }}>
       {/* Visual area */}
       <div className="relative overflow-hidden" style={{ paddingBottom: isLarge ? "46%" : "68%" }}>
         <div
@@ -158,12 +158,12 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
 
       {/* Footer */}
       <div className="px-5 py-4 flex items-center justify-between"
-        style={{ background: "#0a1628", borderTop: `1px solid ${project.accent}15` }}>
+        style={{ background: "#f9f9f9", borderTop: `1px solid ${project.accent}20` }}>
         <div>
-          <h3 className="text-sm font-semibold text-white group-hover:text-gold-300 transition-colors">
+          <h3 className="text-sm font-semibold text-gray-900 transition-colors" style={{ transition: "color 0.2s" }}>
             {project.title}
           </h3>
-          <p className="text-[10px] text-gray-600 mt-0.5 tracking-wider">{hostname}</p>
+          <p className="text-[10px] text-gray-400 mt-0.5 tracking-wider">{hostname}</p>
         </div>
         <a
           href={project.url}
@@ -198,11 +198,11 @@ export default function Portfolio() {
   });
 
   return (
-    <section ref={sectionRef} className="section-padding relative overflow-hidden bg-navy-900">
-      <div className="absolute top-0 right-0 w-[600px] h-[500px] rounded-full blur-3xl opacity-[0.03] pointer-events-none"
-        style={{ background: "radial-gradient(ellipse, #d4af37, transparent)" }} />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full blur-3xl opacity-[0.03] pointer-events-none"
-        style={{ background: "radial-gradient(ellipse, #3b82f6, transparent)" }} />
+    <section ref={sectionRef} className="section-padding relative overflow-hidden" style={{ background: "#ffffff" }}>
+      <div className="absolute top-0 right-0 w-[600px] h-[500px] rounded-full blur-3xl opacity-[0.04] pointer-events-none"
+        style={{ background: "radial-gradient(ellipse, rgba(212,175,55,0.15), transparent)" }} />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full blur-3xl opacity-[0.04] pointer-events-none"
+        style={{ background: "radial-gradient(ellipse, rgba(212,175,55,0.1), transparent)" }} />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
@@ -214,7 +214,10 @@ export default function Portfolio() {
             </svg>
             <input type="text" placeholder="Search projects by name or category..."
               value={search} onChange={(e) => setSearch(e.target.value)}
-              className="premium-input w-full rounded-xl pl-11 pr-4 py-3 text-sm" />
+              className="w-full rounded-xl pl-11 pr-4 py-3 text-sm text-gray-800 placeholder-gray-400"
+              style={{ background: "#f5f5f5", border: "1px solid #e5e5e5", outline: "none", transition: "border-color 0.2s" }}
+              onFocus={(e) => (e.target.style.borderColor = "rgba(212,175,55,0.5)")}
+              onBlur={(e) => (e.target.style.borderColor = "#e5e5e5")} />
           </div>
         </motion.div>
 
@@ -224,7 +227,7 @@ export default function Portfolio() {
           {categories.map((cat) => (
             <button key={cat} onClick={() => setActive(cat)}
               className={`relative px-5 py-2 rounded-full text-xs font-semibold tracking-[0.08em] uppercase transition-all duration-300 overflow-hidden ${
-                active === cat ? "text-navy-900" : "text-gray-500 glass border border-white/10 hover:text-white hover:border-white/20"
+                active === cat ? "text-black" : "text-gray-500 bg-white border border-gray-200 hover:text-gray-800 hover:border-gray-400"
               }`}
               style={active === cat ? { background: "linear-gradient(135deg, #d4af37, #fbbf24)", boxShadow: "0 0 20px rgba(212,175,55,0.35)" } : {}}>
               {active === cat && (
@@ -240,13 +243,13 @@ export default function Portfolio() {
         {/* Count + clear */}
         <motion.div className="mb-6 flex items-center justify-between"
           initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} transition={{ delay: 0.2 }}>
-          <p className="text-xs text-gray-600 tracking-wider">
-            Showing <span className="text-gold-500 font-semibold">{filtered.length}</span> project{filtered.length !== 1 ? "s" : ""}
-            {active !== "All" && <span> in <span className="text-white">{active}</span></span>}
+          <p className="text-xs text-gray-500 tracking-wider">
+            Showing <span className="font-semibold" style={{ color: "#d4af37" }}>{filtered.length}</span> project{filtered.length !== 1 ? "s" : ""}
+            {active !== "All" && <span> in <span className="text-gray-800 font-medium">{active}</span></span>}
           </p>
           {(active !== "All" || search) && (
             <button onClick={() => { setActive("All"); setSearch(""); }}
-              className="text-[10px] text-gray-600 hover:text-gold-400 transition-colors tracking-wider uppercase">
+              className="text-[10px] text-gray-400 hover:text-gray-700 transition-colors tracking-wider uppercase">
               Clear ×
             </button>
           )}
@@ -262,31 +265,83 @@ export default function Portfolio() {
             </motion.div>
           ) : (
             <motion.div className="text-center py-24" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-              <div className="w-16 h-16 rounded-2xl glass flex items-center justify-center mx-auto mb-4">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(212,175,55,0.5)" strokeWidth="1.5">
+              <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4" style={{ background: "#f5f5f5", border: "1px solid #ebebeb" }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(212,175,55,0.6)" strokeWidth="1.5">
                   <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
                 </svg>
               </div>
-              <p className="text-gray-500 text-sm mb-3">No projects found matching <span className="text-white">&ldquo;{search}&rdquo;</span></p>
-              <button onClick={() => { setActive("All"); setSearch(""); }} className="text-xs text-gold-500 hover:text-gold-300 transition-colors">
+              <p className="text-gray-500 text-sm mb-3">No projects found matching <span className="text-gray-800 font-medium">&ldquo;{search}&rdquo;</span></p>
+              <button onClick={() => { setActive("All"); setSearch(""); }} className="text-xs font-medium transition-colors" style={{ color: "#d4af37" }}>
                 Clear search
               </button>
             </motion.div>
           )}
         </AnimatePresence>
 
-        {/* Bottom CTA */}
-        <motion.div className="mt-16 pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6"
-          initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} transition={{ delay: 0.5 }}>
-          <div>
-            <p className="text-white font-display text-lg font-semibold mb-1">Like what you see?</p>
-            <p className="text-gray-500 text-sm">We&apos;d love to build something exceptional for your business too.</p>
-          </div>
-          <Link href="/contact" className="btn-gold px-8 py-3.5 rounded-full text-sm font-semibold tracking-wide inline-flex items-center gap-2 shrink-0">
-            Start a Project <ArrowUpRight size={15} />
-          </Link>
-        </motion.div>
       </div>
+
+      {/* Bottom CTA — full-width dark band */}
+      <motion.div
+        className="relative overflow-hidden mt-16"
+        style={{ background: "linear-gradient(135deg, #050d1f 0%, #0d1f14 50%, #050d1f 100%)" }}
+        initial={{ opacity: 0, y: 30 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ delay: 0.5, duration: 0.7 }}
+      >
+        {/* Gold top border */}
+        <div className="h-px w-full" style={{ background: "linear-gradient(90deg, transparent 0%, #d4af37 30%, #d4af37 70%, transparent 100%)" }} />
+
+        {/* Background pattern */}
+        <div className="absolute inset-0 opacity-[0.04] pointer-events-none"
+          style={{ backgroundImage: "linear-gradient(#d4af37 1px, transparent 1px), linear-gradient(90deg, #d4af37 1px, transparent 1px)", backgroundSize: "48px 48px" }} />
+
+        {/* Gold glow center */}
+        <div className="absolute inset-0 pointer-events-none"
+          style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(212,175,55,0.08) 0%, transparent 65%)" }} />
+
+        <div className="max-w-7xl mx-auto px-6 py-14 relative z-10">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div>
+              <p className="text-[10px] tracking-[0.35em] uppercase font-bold mb-3" style={{ color: "#d4af37" }}>
+                Ready to Get Started?
+              </p>
+              <h3 className="font-display font-bold text-white leading-tight mb-2" style={{ fontSize: "clamp(1.6rem, 3vw, 2.4rem)" }}>
+                Like what you see?
+              </h3>
+              <p className="text-sm" style={{ color: "rgba(255,255,255,0.45)", maxWidth: "400px" }}>
+                We&apos;d love to build something exceptional for your business too. Let&apos;s talk about your project.
+              </p>
+            </div>
+            <div className="flex items-center gap-4 shrink-0">
+              <Link
+                href="/contact"
+                className="group flex items-center gap-3 px-8 py-4 text-sm font-bold tracking-wide transition-all hover:opacity-90"
+                style={{
+                  background: "#d4af37",
+                  color: "#000",
+                  clipPath: "polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%)",
+                  boxShadow: "0 8px 28px rgba(212,175,55,0.35)",
+                }}
+              >
+                Start a Project
+                <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </Link>
+              <Link
+                href="/contact"
+                className="text-sm font-semibold transition-colors"
+                style={{ color: "rgba(255,255,255,0.45)" }}
+                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#d4af37")}
+                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "rgba(255,255,255,0.45)")}
+              >
+                or book a free consultation →
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Gold bottom border */}
+        <div className="h-px w-full" style={{ background: "linear-gradient(90deg, transparent 0%, #d4af37 30%, #d4af37 70%, transparent 100%)" }} />
+      </motion.div>
     </section>
   );
 }

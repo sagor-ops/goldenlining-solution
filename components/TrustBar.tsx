@@ -20,7 +20,7 @@ export default function TrustBar() {
     <div
       className="py-4 overflow-hidden"
       style={{
-        background: "#0a1a10",
+        background: "#0d1f14",
         borderTop: "1px solid rgba(212,175,55,0.2)",
         borderBottom: "1px solid rgba(212,175,55,0.2)",
       }}

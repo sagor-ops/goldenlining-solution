@@ -37,7 +37,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-white/5" style={{ background: "linear-gradient(180deg, #050d1f 0%, #030712 100%)" }}>
+    <footer className="relative overflow-hidden border-t border-white/5" style={{ background: "#0d1f14" }}>
       {/* Background */}
       <div
         className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[200px] rounded-full blur-3xl opacity-[0.03] pointer-events-none"
@@ -50,11 +50,11 @@ export default function Footer() {
           <div className="marquee-track flex gap-12 items-center">
             {Array(8).fill(0).map((_, i) => (
               <span key={i} className="flex items-center gap-4 shrink-0">
-                <span className="text-xs tracking-[0.4em] text-gray-700 uppercase">
+                <span className="text-xs tracking-[0.4em] text-white uppercase">
                   Premium Digital Agency
                 </span>
                 <span className="w-1 h-1 rounded-full bg-gold-500/40" />
-                <span className="text-xs tracking-[0.4em] text-gray-700 uppercase">
+                <span className="text-xs tracking-[0.4em] text-white uppercase">
                   Goldenlining Solution
                 </span>
                 <span className="w-1 h-1 rounded-full bg-gold-500/40" />

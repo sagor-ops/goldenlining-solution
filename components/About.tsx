@@ -20,46 +20,16 @@ const timeline = [
   { year: "2024", title: "Premium Agency",  text: "Recognised as one of the region's leading premium digital agencies, with 200+ successful projects globally.",         color: "#10b981" },
 ];
 
-const stats = [
-  { value: "200+", label: "Projects",     color: "#d4af37" },
-  { value: "98%",  label: "Satisfaction", color: "#3b82f6" },
-  { value: "50+",  label: "Clients",      color: "#8b5cf6" },
-  { value: "7+",   label: "Years",        color: "#10b981" },
-];
 
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" ref={sectionRef} className="section-padding relative overflow-hidden" style={{ background: "#f4f7ff" }}>
-      <div className="absolute inset-0 grid-overlay-light pointer-events-none" />
+    <section id="about" ref={sectionRef} className="section-padding relative overflow-hidden" style={{ background: "#ffffff" }}>
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(212,175,55,0.03) 0%, transparent 60%)" }} />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* 3D Stats bar */}
-        <motion.div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-20"
-          style={{ perspective: "800px" }}
-          initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }}>
-          {stats.map((stat, i) => (
-            <Tilt3D key={stat.label} intensity={12} scale={1.05}>
-              <div className="card-light text-center py-7 px-4 relative overflow-hidden"
-                style={{
-                  boxShadow: `0 8px 32px ${stat.color}12, 0 2px 8px rgba(0,0,0,0.06)`,
-                  border: `1px solid ${stat.color}20`,
-                  animation: `float-3d ${5 + i * 0.8}s ease-in-out infinite`,
-                  animationDelay: `${i * 0.5}s`,
-                }}>
-                <div className="absolute inset-0 surface-light" />
-                <div className="text-4xl font-extrabold mb-1 relative z-10"
-                  style={{ color: stat.color, textShadow: `2px 3px 8px ${stat.color}30` }}>
-                  {stat.value}
-                </div>
-                <div className="text-xs text-gray-400 tracking-wider uppercase font-semibold relative z-10">{stat.label}</div>
-              </div>
-            </Tilt3D>
-          ))}
-        </motion.div>
-
         <div className="grid lg:grid-cols-2 gap-20 items-start">
           {/* Left */}
           <div>

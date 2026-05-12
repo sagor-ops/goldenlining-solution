@@ -53,8 +53,8 @@ export default function Services() {
 
   return (
     <>
-      <section id="services" ref={sectionRef} className="section-padding relative overflow-hidden" style={{ background: "#f4f7ff" }}>
-        <div className="absolute inset-0 grid-overlay-light pointer-events-none" />
+      <section id="services" ref={sectionRef} className="section-padding relative overflow-hidden" style={{ background: "#ffffff" }}>
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(212,175,55,0.03) 0%, transparent 60%)" }} />
         {/* Colored top bar */}
         <div className="absolute top-0 left-0 right-0 h-1 transition-all duration-500"
           style={{ background: `linear-gradient(90deg, transparent, ${active.color}, transparent)` }} />

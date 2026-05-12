@@ -43,8 +43,8 @@ export default function ContactStrip() {
 
   const inputBase: React.CSSProperties = {
     width: "100%",
-    background: "rgba(255,255,255,0.04)",
-    border: "1px solid rgba(212,175,55,0.2)",
+    background: "rgba(255,255,255,0.03)",
+    border: "1px solid rgba(255,255,255,0.08)",
     color: "#fff",
     fontSize: "14px",
     padding: "13px 16px",
@@ -58,16 +58,16 @@ export default function ContactStrip() {
       className="relative overflow-hidden"
       style={{ background: "#0d1f14" }}
     >
-      {/* Gold top line */}
-      <div className="h-px w-full" style={{ background: "linear-gradient(90deg, transparent, #d4af37 30%, #d4af37 70%, transparent)" }} />
+      {/* Top border matching footer */}
+      <div className="h-px w-full" style={{ background: "rgba(255,255,255,0.05)" }} />
 
       {/* Subtle grid */}
       <div className="absolute inset-0 grid-overlay opacity-10 pointer-events-none" />
 
       {/* Gold glow */}
       <div
-        className="absolute top-0 right-1/4 w-[500px] h-[500px] rounded-full blur-3xl pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(212,175,55,0.06), transparent)" }}
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full blur-3xl pointer-events-none"
+        style={{ background: "radial-gradient(ellipse, rgba(212,175,55,0.04), transparent)" }}
       />
 
       <div className="max-w-7xl mx-auto px-6 py-16 lg:py-20">
@@ -136,8 +136,8 @@ export default function ContactStrip() {
                       value={form.name}
                       onChange={(e) => set("name", e.target.value)}
                       style={inputBase}
-                      onFocus={(e) => (e.target.style.borderColor = "#d4af37")}
-                      onBlur={(e) => (e.target.style.borderColor = "rgba(212,175,55,0.2)")}
+                      onFocus={(e) => (e.target.style.borderColor = "rgba(212,175,55,0.5)")}
+                      onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.08)")}
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">
@@ -149,8 +149,8 @@ export default function ContactStrip() {
                       value={form.email}
                       onChange={(e) => set("email", e.target.value)}
                       style={inputBase}
-                      onFocus={(e) => (e.target.style.borderColor = "#d4af37")}
-                      onBlur={(e) => (e.target.style.borderColor = "rgba(212,175,55,0.2)")}
+                      onFocus={(e) => (e.target.style.borderColor = "rgba(212,175,55,0.5)")}
+                      onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.08)")}
                     />
                   </div>
                 </div>
@@ -162,12 +162,12 @@ export default function ContactStrip() {
                     value={form.service}
                     onChange={(e) => set("service", e.target.value)}
                     style={{ ...inputBase, appearance: "none", cursor: "pointer" }}
-                    onFocus={(e) => (e.target.style.borderColor = "#d4af37")}
-                    onBlur={(e) => (e.target.style.borderColor = "rgba(212,175,55,0.2)")}
+                    onFocus={(e) => (e.target.style.borderColor = "rgba(212,175,55,0.5)")}
+                    onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.08)")}
                   >
-                    <option value="" style={{ background: "#0d1f14" }}>Select a service…</option>
+                    <option value="" style={{ background: "#050d1f" }}>Select a service…</option>
                     {services.map((s) => (
-                      <option key={s} value={s} style={{ background: "#0d1f14" }}>{s}</option>
+                      <option key={s} value={s} style={{ background: "#050d1f" }}>{s}</option>
                     ))}
                   </select>
                 </div>
@@ -182,8 +182,8 @@ export default function ContactStrip() {
                     value={form.message}
                     onChange={(e) => set("message", e.target.value)}
                     style={{ ...inputBase, resize: "none" }}
-                    onFocus={(e) => (e.target.style.borderColor = "#d4af37")}
-                    onBlur={(e) => (e.target.style.borderColor = "rgba(212,175,55,0.2)")}
+                    onFocus={(e) => (e.target.style.borderColor = "rgba(212,175,55,0.5)")}
+                    onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.08)")}
                   />
                 </div>
 
@@ -214,8 +214,8 @@ export default function ContactStrip() {
         </div>
       </div>
 
-      {/* Gold bottom line */}
-      <div className="h-px w-full" style={{ background: "linear-gradient(90deg, transparent, #d4af37 30%, #d4af37 70%, transparent)" }} />
+      {/* Bottom border matching footer */}
+      <div className="h-px w-full" style={{ background: "rgba(255,255,255,0.05)" }} />
     </section>
   );
 }

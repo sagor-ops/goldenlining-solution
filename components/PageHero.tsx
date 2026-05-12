@@ -12,21 +12,21 @@ interface PageHeroProps {
 export default function PageHero({ badge, title, highlight, description }: PageHeroProps) {
   return (
     <section className="relative pt-40 pb-20 overflow-hidden"
-      style={{ background: "linear-gradient(160deg, #050d1f 0%, #0a1628 50%, #0f1f3d 80%, #050d1f 100%)" }}>
-      <div className="absolute inset-0 grid-overlay opacity-40 pointer-events-none" />
+      style={{ background: "#0d1f14" }}>
+      <div className="absolute inset-0 grid-overlay opacity-[0.15] pointer-events-none" />
 
-      {/* Vivid blobs */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full blur-3xl opacity-[0.10] pointer-events-none"
+      {/* Gold glows */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full blur-3xl opacity-[0.07] pointer-events-none"
         style={{ background: "radial-gradient(ellipse, #d4af37, transparent)" }} />
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full blur-3xl opacity-[0.08] pointer-events-none"
-        style={{ background: "radial-gradient(ellipse, #3b82f6, transparent)" }} />
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full blur-3xl opacity-[0.04] pointer-events-none"
+        style={{ background: "radial-gradient(ellipse, #d4af37, transparent)" }} />
 
-      {/* 3D Orbital rings left */}
+      {/* Orbital rings left */}
       <div className="absolute left-12 top-1/2 -translate-y-1/2 w-36 h-36 pointer-events-none hidden xl:block" style={{ perspective: "500px" }}>
         {[
-          { color: "rgba(212,175,55,0.3)", dur: 10, anim: "spin-3d-y" },
-          { color: "rgba(99,102,241,0.2)",  dur: 16, anim: "spin-3d-x" },
-          { color: "rgba(59,130,246,0.15)", dur: 22, anim: "spin-3d-z" },
+          { color: "rgba(212,175,55,0.35)", dur: 10, anim: "spin-3d-y" },
+          { color: "rgba(212,175,55,0.15)", dur: 16, anim: "spin-3d-x" },
+          { color: "rgba(212,175,55,0.08)", dur: 22, anim: "spin-3d-z" },
         ].map((r, i) => (
           <div key={i} className="absolute inset-0 rounded-full border"
             style={{ borderColor: r.color, animation: `${r.anim} ${r.dur}s linear infinite` }} />
@@ -34,9 +34,9 @@ export default function PageHero({ badge, title, highlight, description }: PageH
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full"
           style={{ background: "#d4af37", boxShadow: "0 0 10px rgba(212,175,55,0.7)" }} />
       </div>
-      {/* 3D Orbital rings right */}
+      {/* Orbital rings right */}
       <div className="absolute right-12 top-1/2 -translate-y-1/2 w-24 h-24 pointer-events-none hidden xl:block" style={{ perspective: "400px" }}>
-        {["rgba(59,130,246,0.25)", "rgba(139,92,246,0.2)"].map((color, i) => (
+        {["rgba(212,175,55,0.2)", "rgba(212,175,55,0.1)"].map((color, i) => (
           <div key={i} className="absolute inset-0 rounded-full border"
             style={{ borderColor: color, animation: `${i === 0 ? "spin-3d-x" : "spin-3d-z"} ${12 + i * 6}s linear infinite` }} />
         ))}
@@ -66,7 +66,7 @@ export default function PageHero({ badge, title, highlight, description }: PageH
         </motion.p>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#050d1f] to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-20 pointer-events-none" style={{ background: "linear-gradient(to top, #0d1f14, transparent)" }} />
     </section>
   );
 }
