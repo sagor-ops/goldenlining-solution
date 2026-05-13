@@ -1,8 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Linkedin, Twitter, Instagram, Facebook, ArrowUpRight } from "lucide-react";
+import dynamic from "next/dynamic";
+
+const JoinTeamModal = dynamic(() => import("./JoinTeamModal"), { ssr: false });
+const ConsultationModal = dynamic(() => import("./ConsultationModal"), { ssr: false });
 
 const links: Record<string, { label: string; href: string }[]> = {
   Services: [
@@ -23,8 +28,8 @@ const links: Record<string, { label: string; href: string }[]> = {
   Support: [
     { label: "Contact Us",       href: "/contact" },
     { label: "Free Consultation",href: "/contact" },
-    { label: "Privacy Policy",   href: "#" },
-    { label: "Terms of Service", href: "#" },
+    { label: "Privacy Policy",   href: "/privacy-policy" },
+    { label: "Terms of Service", href: "/terms-of-service" },
   ],
 };
 
@@ -36,7 +41,11 @@ const socials = [
 ];
 
 export default function Footer() {
+  const [joinModalOpen, setJoinModalOpen] = useState(false);
+  const [consultModalOpen, setConsultModalOpen] = useState(false);
+
   return (
+    <>
     <footer className="relative overflow-hidden border-t border-white/5" style={{ background: "#0d1f14" }}>
       {/* Background */}
       <div
@@ -45,19 +54,19 @@ export default function Footer() {
       />
 
       {/* Top marquee */}
-      <div className="border-b border-white/5 py-4 overflow-hidden">
+      <div className="border-b py-3 overflow-hidden" style={{ borderColor: "rgba(212,175,55,0.15)" }}>
         <div className="flex items-center whitespace-nowrap">
-          <div className="marquee-track flex gap-12 items-center">
+          <div className="marquee-track flex gap-0 items-center">
             {Array(8).fill(0).map((_, i) => (
-              <span key={i} className="flex items-center gap-4 shrink-0">
-                <span className="text-xs tracking-[0.4em] text-white uppercase">
-                  Premium Digital Agency
-                </span>
-                <span className="w-1 h-1 rounded-full bg-gold-500/40" />
-                <span className="text-xs tracking-[0.4em] text-white uppercase">
+              <span key={i} className="flex items-center shrink-0">
+                <span className="text-[10px] tracking-[0.4em] uppercase font-semibold px-8" style={{ color: "rgba(212,175,55,0.7)" }}>
                   Goldenlining Solution
                 </span>
-                <span className="w-1 h-1 rounded-full bg-gold-500/40" />
+                <span className="w-1 h-1 rotate-45 shrink-0" style={{ background: "rgba(212,175,55,0.4)" }} />
+                <span className="text-[10px] tracking-[0.4em] uppercase font-semibold px-8" style={{ color: "rgba(255,255,255,0.25)" }}>
+                  Premium Digital Agency
+                </span>
+                <span className="w-1 h-1 rotate-45 shrink-0" style={{ background: "rgba(212,175,55,0.4)" }} />
               </span>
             ))}
           </div>
@@ -72,22 +81,30 @@ export default function Footer() {
               <img src="/logo.svg" alt="Goldenlining Solution" className="h-14 w-auto group-hover:opacity-80 transition-opacity" width="200" height="56" decoding="async" />
             </Link>
 
-            <p className="text-gray-500 text-sm leading-relaxed mb-6 max-w-xs">
-              We build elite digital experiences for serious businesses. Premium strategy, design, and technology for brands that refuse average.
+            <p className="text-sm leading-relaxed mb-6 max-w-xs" style={{ color: "rgba(255,255,255,0.35)" }}>
+              Premium web design, SEO &amp; digital marketing for ambitious businesses across Australia and globally.
             </p>
 
             {/* Contact quick */}
-            <div className="space-y-2 mb-6">
+            <div className="space-y-2.5 mb-6">
               <a
                 href="tel:+61480684500"
-                className="block text-sm text-gray-400 hover:text-gold-400 transition-colors"
+                className="flex items-center gap-2.5 text-sm transition-colors group"
+                style={{ color: "rgba(255,255,255,0.45)" }}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#d4af37")}
+                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.45)")}
               >
+                <span className="w-1 h-1 rounded-full shrink-0" style={{ background: "#d4af37" }} />
                 +61 480 684 500
               </a>
               <a
                 href="mailto:goldenliningsolution@gmail.com"
-                className="block text-sm text-gray-400 hover:text-gold-400 transition-colors"
+                className="flex items-center gap-2.5 text-sm transition-colors break-all sm:break-normal"
+                style={{ color: "rgba(255,255,255,0.45)" }}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#d4af37")}
+                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.45)")}
               >
+                <span className="w-1 h-1 rounded-full shrink-0" style={{ background: "#d4af37" }} />
                 goldenliningsolution@gmail.com
               </a>
             </div>
@@ -110,18 +127,34 @@ export default function Footer() {
           {/* Links */}
           {Object.entries(links).map(([group, items]) => (
             <div key={group}>
-              <h4 className="text-xs font-semibold text-white tracking-[0.2em] uppercase mb-5">
+              <h4 className="text-[10px] font-bold tracking-[0.25em] uppercase mb-5"
+                style={{ color: "#d4af37" }}>
                 {group}
               </h4>
-              <ul className="space-y-2.5">
+              <ul className="space-y-3">
                 {items.map((item) => (
                   <li key={item.label}>
-                    <Link
-                      href={item.href}
-                      className="text-xs text-gray-500 hover:text-gray-300 transition-colors duration-200 animated-underline"
-                    >
-                      {item.label}
-                    </Link>
+                    {item.label === "Careers" || item.label === "Free Consultation" ? (
+                      <button
+                        onClick={() => item.label === "Careers" ? setJoinModalOpen(true) : setConsultModalOpen(true)}
+                        className="text-xs transition-colors duration-200 text-left"
+                        style={{ color: "rgba(255,255,255,0.4)" }}
+                        onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.85)")}
+                        onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.4)")}
+                      >
+                        {item.label}
+                      </button>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className="text-xs transition-colors duration-200"
+                        style={{ color: "rgba(255,255,255,0.4)" }}
+                        onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.85)")}
+                        onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.4)")}
+                      >
+                        {item.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -130,28 +163,24 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-10 sm:mt-14 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-gray-700">
+        <div className="mt-10 sm:mt-14 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3"
+          style={{ borderTop: "1px solid rgba(212,175,55,0.1)" }}>
+          <p className="text-[11px] tracking-wide" style={{ color: "rgba(255,255,255,0.2)" }}>
             &copy; {new Date().getFullYear()} Goldenlining Solution. All rights reserved.
           </p>
-
-          <div className="flex items-center gap-6">
-            <a href="#" className="text-xs text-gray-700 hover:text-gray-500 transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-xs text-gray-700 hover:text-gray-500 transition-colors">
-              Terms of Service
-            </a>
-            <span className="text-xs text-gray-800 flex items-center gap-1.5">
-              <span
-                className="w-1.5 h-1.5 rounded-full"
-                style={{ background: "#d4af37" }}
-              />
-              Built for excellence
+          <div className="flex items-center gap-2" style={{ color: "rgba(212,175,55,0.5)" }}>
+            <span className="w-4 h-px" style={{ background: "rgba(212,175,55,0.4)" }} />
+            <span className="text-[10px] tracking-[0.3em] uppercase font-semibold">
+              Australia &amp; Global · Est. 2017
             </span>
+            <span className="w-4 h-px" style={{ background: "rgba(212,175,55,0.4)" }} />
           </div>
         </div>
       </div>
     </footer>
+
+    <JoinTeamModal isOpen={joinModalOpen} onClose={() => setJoinModalOpen(false)} />
+    <ConsultationModal isOpen={consultModalOpen} onClose={() => setConsultModalOpen(false)} />
+    </>
   );
 }

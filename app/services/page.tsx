@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation";
 import PageHero from "@/components/PageHero";
 import Services from "@/components/Services";
 
+const ProcessTimeline = dynamic(() => import("@/components/ProcessTimeline"));
 const ConsultationCTA = dynamic(() => import("@/components/ConsultationCTA"));
 const Footer          = dynamic(() => import("@/components/Footer"));
 
@@ -35,6 +36,7 @@ export default function ServicesPage() {
         description="Every solution we deliver is built to the highest standard — combining strategic thinking, creative excellence, and technical precision to drive real business results."
       />
       <Services />
+      <ProcessTimeline />
       <ConsultationCTA />
       <Footer />
     </main>
