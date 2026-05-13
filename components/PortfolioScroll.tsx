@@ -6,31 +6,37 @@ import Link from "next/link";
 import { ExternalLink, ArrowUpRight } from "lucide-react";
 
 const projects = [
-  { title: "Battery Mineral Project",  url: "batterymineralproject.com",           category: "Industry",    accent: "#f59e0b" },
-  { title: "Juris Maximus",            url: "jurismaximus.com",                     category: "Legal",       accent: "#a78bfa" },
-  { title: "Walus Bookkeeping",        url: "walusbookkeeping.com",                 category: "Finance",     accent: "#d4af37" },
-  { title: "Ask CSS",                  url: "askcss.com.au",                        category: "Non-Profit",  accent: "#10b981" },
-  { title: "Equifund",                 url: "equifund.com.au",                      category: "Finance",     accent: "#60a5fa" },
-  { title: "Maricc",                   url: "maricc.com",                           category: "Web Design",  accent: "#f472b6" },
-  { title: "De La Mar Academy",        url: "delamaracademy.co.uk",                 category: "Education",   accent: "#c084fc" },
-  { title: "SB Event Horizon",         url: "sbeventhorizon.com",                   category: "Hospitality", accent: "#fb923c" },
-  { title: "HRM Tech",                 url: "hrmtech.co.uk",                        category: "Technology",  accent: "#38bdf8" },
-  { title: "Alpha1 Research",          url: "alpha1research.com",                   category: "Technology",  accent: "#a78bfa" },
-  { title: "Solo Rack",                url: "solo-rack.com",                        category: "Ecommerce",   accent: "#fbbf24" },
-  { title: "CMM Renovations",          url: "cmmrenovations.com.au",                category: "Industry",    accent: "#fb923c" },
-  { title: "Tier 1 Business Group",    url: "tier1businessgroup.com",               category: "Finance",     accent: "#d4af37" },
-  { title: "Abilities RC",             url: "abilitiesrc.com",                      category: "Healthcare",  accent: "#34d399" },
-  { title: "Asset Training Enrol",     url: "assettrainingenrol.com.au",            category: "Education",   accent: "#60a5fa" },
-  { title: "Caladonna",                url: "caladonna.com.au",                     category: "Ecommerce",   accent: "#f472b6" },
-  { title: "RPM Engineering",          url: "rpmengineering.com.au",                category: "Industry",    accent: "#f59e0b" },
-  { title: "Booxkeeping",              url: "booxkeeping.com",                      category: "Finance",     accent: "#34d399" },
-  { title: "Key 2 Driving",            url: "key2driving.com",                      category: "Education",   accent: "#fbbf24" },
-  { title: "Riot Kyabram",             url: "riotkyabram.com",                      category: "Hospitality", accent: "#fb923c" },
+  { title: "Ask CSS",                  url: "askcss.com.au",                       category: "Non-Profit",  accent: "#10b981" },
+  { title: "Equifund",                 url: "equifund.com.au",                     category: "Finance",     accent: "#3b82f6" },
+  { title: "Maricc",                   url: "maricc.com",                          category: "Web Design",  accent: "#ec4899" },
+  { title: "De La Mar Academy",        url: "delamaracademy.co.uk",                category: "Education",   accent: "#8b5cf6" },
+  { title: "SB Event Horizon",         url: "sbeventhorizon.com",                  category: "Hospitality", accent: "#f97316" },
+  { title: "Halstein",                 url: "halstein.qodeinteractive.com",        category: "Web Design",  accent: "#d4af37" },
+  { title: "HRM Tech",                 url: "hrmtech.co.uk",                       category: "Technology",  accent: "#0ea5e9" },
+  { title: "FS Partners NC",           url: "fspartnersnc.com",                    category: "Finance",     accent: "#34d399" },
+  { title: "AEPP LLC",                 url: "aeppllc.com",                         category: "Industry",    accent: "#fb923c" },
+  { title: "Infotech Group",           url: "infotechgroup.com",                   category: "Technology",  accent: "#3b82f6" },
+  { title: "Vita Consulting",          url: "vitaconsulting.co.uk",                category: "Finance",     accent: "#d4af37" },
+  { title: "Digital Kiwi Tech",        url: "digitalkiwitech.co.nz",               category: "Technology",  accent: "#10b981" },
+  { title: "Solo Rack",                url: "solo-rack.com",                       category: "Ecommerce",   accent: "#f59e0b" },
+  { title: "Daniel Pays",              url: "danielpays.com",                      category: "Finance",     accent: "#6366f1" },
+  { title: "KDFSB",                    url: "kdfsb.org",                           category: "Non-Profit",  accent: "#0ea5e9" },
+  { title: "CMM Renovations",          url: "cmmrenovations.com.au",               category: "Industry",    accent: "#fb923c" },
+  { title: "Tier 1 Business Group",    url: "tier1businessgroup.com",              category: "Finance",     accent: "#d4af37" },
+  { title: "Elite Tooling Services",   url: "elitetoolingservices.com",            category: "Industry",    accent: "#94a3b8" },
+  { title: "Abilities RC",             url: "abilitiesrc.com",                     category: "Healthcare",  accent: "#34d399" },
+  { title: "Overland Speech Therapy",  url: "overlandspeechtherapy.com.au",        category: "Healthcare",  accent: "#a78bfa" },
+  { title: "RPM Engineering",          url: "rpmengineering.com.au",               category: "Industry",    accent: "#f59e0b" },
+  { title: "Caladonna",                url: "caladonna.com.au",                    category: "Ecommerce",   accent: "#ec4899" },
+  { title: "My Daily Support Service", url: "mydailysupportservice.com",           category: "Healthcare",  accent: "#10b981" },
+  { title: "Asset Training Enrol",     url: "assettrainingenrol.com.au",           category: "Education",   accent: "#3b82f6" },
+  { title: "Key 2 Driving",            url: "key2driving.com",                     category: "Education",   accent: "#fbbf24" },
+  { title: "JR Book Accounting",       url: "jrbookaccounting.com",                category: "Finance",     accent: "#d4af37" },
 ];
 
-// Duplicate for seamless loop
-const row1 = [...projects.slice(0, 10),  ...projects.slice(0, 10)];
-const row2 = [...projects.slice(10, 20), ...projects.slice(10, 20)];
+// Split into two rows and duplicate for seamless infinite loop
+const row1 = [...projects.slice(0, 13), ...projects.slice(0, 13)];
+const row2 = [...projects.slice(13),    ...projects.slice(13)];
 
 function Card({ p }: { p: typeof projects[0] }) {
   return (
@@ -38,11 +44,12 @@ function Card({ p }: { p: typeof projects[0] }) {
       href={`https://${p.url}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="group shrink-0 flex items-center gap-4 px-5 py-3.5 mx-2 transition-all duration-300"
+      className="group shrink-0 flex items-center gap-3.5 px-4 py-3 mx-2 transition-all duration-300"
       style={{
         background: "#f9f9f9",
         border: "1px solid #ececec",
-        minWidth: "260px",
+        minWidth: "240px",
+        borderRadius: "10px",
       }}
       onMouseEnter={(e) => {
         (e.currentTarget as HTMLAnchorElement).style.background = `${p.accent}0e`;
@@ -53,19 +60,43 @@ function Card({ p }: { p: typeof projects[0] }) {
         (e.currentTarget as HTMLAnchorElement).style.borderColor = "#ececec";
       }}
     >
-      {/* Accent dot */}
-      <div className="w-2 h-2 rounded-full shrink-0" style={{ background: p.accent }} />
+      {/* Favicon / logo */}
+      <div
+        className="w-8 h-8 rounded-lg shrink-0 flex items-center justify-center overflow-hidden"
+        style={{ background: "white", border: `1px solid ${p.accent}25`, boxShadow: `0 2px 6px ${p.accent}18` }}
+      >
+        <img
+          src={`https://logo.clearbit.com/${p.url}`}
+          alt={p.title}
+          width={20}
+          height={20}
+          className="object-contain"
+          onError={(e) => {
+            const img = e.currentTarget;
+            if (!img.dataset.fallback) {
+              img.dataset.fallback = "1";
+              img.src = `https://www.google.com/s2/favicons?domain=${p.url}&sz=64`;
+            } else {
+              img.style.display = "none";
+              const parent = img.parentElement;
+              if (parent) {
+                parent.innerHTML = `<div style="width:8px;height:8px;border-radius:50%;background:${p.accent}"></div>`;
+              }
+            }
+          }}
+        />
+      </div>
 
-      <div className="flex flex-col min-w-0">
+      <div className="flex flex-col min-w-0 flex-1">
         <span className="text-xs font-bold text-gray-800 truncate leading-tight">{p.title}</span>
-        <span className="text-[10px] truncate mt-0.5 transition-colors duration-200 group-hover:opacity-90" style={{ color: p.accent }}>
+        <span className="text-[10px] truncate mt-0.5 transition-colors duration-200" style={{ color: p.accent }}>
           {p.url}
         </span>
       </div>
 
-      <div className="ml-auto flex items-center gap-2 shrink-0">
+      <div className="flex items-center gap-2 shrink-0">
         <span
-          className="text-[8px] tracking-wider uppercase font-bold px-2 py-0.5"
+          className="text-[8px] tracking-wider uppercase font-bold px-2 py-0.5 rounded-sm"
           style={{ background: `${p.accent}18`, color: p.accent, border: `1px solid ${p.accent}30` }}
         >
           {p.category}
@@ -104,7 +135,7 @@ export default function PortfolioScroll() {
             Our Work
           </p>
           <h3 className="font-display font-bold text-black" style={{ fontSize: "clamp(1.4rem, 3vw, 2rem)" }}>
-            600+ Projects Delivered Worldwide
+            26 Live Projects &amp; Counting
           </h3>
         </div>
         <Link
@@ -121,7 +152,7 @@ export default function PortfolioScroll() {
       <div className="overflow-hidden mb-3">
         <div
           className="flex"
-          style={{ animation: "portfolio-scroll-l 40s linear infinite", width: "max-content" }}
+          style={{ animation: "portfolio-scroll-l 50s linear infinite", width: "max-content" }}
         >
           {row1.map((p, i) => <Card key={i} p={p} />)}
         </div>
@@ -131,7 +162,7 @@ export default function PortfolioScroll() {
       <div className="overflow-hidden">
         <div
           className="flex"
-          style={{ animation: "portfolio-scroll-r 45s linear infinite", width: "max-content" }}
+          style={{ animation: "portfolio-scroll-r 55s linear infinite", width: "max-content" }}
         >
           {row2.map((p, i) => <Card key={i} p={p} />)}
         </div>

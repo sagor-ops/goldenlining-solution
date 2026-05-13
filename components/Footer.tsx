@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Linkedin, Twitter, Instagram, Facebook, ArrowUpRight } from "lucide-react";
+import { Linkedin, Facebook, ArrowUpRight } from "lucide-react";
 import dynamic from "next/dynamic";
 
 const JoinTeamModal = dynamic(() => import("./JoinTeamModal"), { ssr: false });
@@ -24,6 +24,7 @@ const links: Record<string, { label: string; href: string }[]> = {
     { label: "Portfolio",  href: "/portfolio" },
     { label: "Blog",       href: "/blog" },
     { label: "Careers",    href: "/contact" },
+    { label: "Discover Our Apps", href: "https://lab.goldenliningsolution.com/" },
   ],
   Support: [
     { label: "Contact Us",       href: "/contact" },
@@ -34,10 +35,8 @@ const links: Record<string, { label: string; href: string }[]> = {
 };
 
 const socials = [
-  { icon: Linkedin, label: "LinkedIn", href: "#" },
-  { icon: Twitter, label: "Twitter", href: "#" },
-  { icon: Instagram, label: "Instagram", href: "#" },
-  { icon: Facebook, label: "Facebook", href: "#" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/golden-lining-solution-925b8a341/" },
+  { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/p/Golden-Lining-Solution-61566083714627/" },
 ];
 
 export default function Footer() {
@@ -116,6 +115,8 @@ export default function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-9 h-9 rounded-xl glass flex items-center justify-center text-gray-600 hover:text-gold-400 hover:border-gold-500/20 border border-white/5 transition-all duration-300"
                 >
                   <Icon size={14} />
@@ -151,6 +152,7 @@ export default function Footer() {
                         style={{ color: "rgba(255,255,255,0.4)" }}
                         onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.85)")}
                         onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.4)")}
+                        {...(item.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                       >
                         {item.label}
                       </Link>
