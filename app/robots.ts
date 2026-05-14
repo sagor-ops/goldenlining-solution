@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/_next/", "/data/"],
       },
     ],
-    sitemap: "https://goldenlining.com.au/sitemap.xml",
-    host: "https://goldenlining.com.au",
+    sitemap: "https://goldenliningsolution.com/sitemap.xml",
+    host: "https://goldenliningsolution.com",
   };
 }

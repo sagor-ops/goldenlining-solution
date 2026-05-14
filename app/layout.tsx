@@ -34,34 +34,31 @@ export const metadata: Metadata = {
     "premium web development",
     "Goldenlining Solution",
   ],
-  authors: [{ name: "Goldenlining Solution", url: "https://goldenlining.com.au" }],
+  authors: [{ name: "Goldenlining Solution", url: "https://goldenliningsolution.com" }],
   creator: "Goldenlining Solution",
   publisher: "Goldenlining Solution",
-  metadataBase: new URL("https://goldenlining.com.au"),
-  alternates: { canonical: "https://goldenlining.com.au" },
+  metadataBase: new URL("https://goldenliningsolution.com"),
+  alternates: { canonical: "https://goldenliningsolution.com" },
   openGraph: {
     type: "website",
     locale: "en_AU",
-    url: "https://goldenlining.com.au",
+    url: "https://goldenliningsolution.com",
     siteName: "Goldenlining Solution",
     title: "Goldenlining Solution | Web Design, SEO & Digital Agency — Australia",
     description:
       "Premium web design, SEO, Google Ads & branding for ambitious businesses. 600+ projects. 98% satisfaction. Australia & Global.",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Goldenlining Solution — Premium Digital Agency" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Goldenlining Solution — Premium Digital Agency" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Goldenlining Solution | Web Design & SEO Agency",
     description: "Premium web design, SEO & digital marketing. 600+ projects delivered across Australia & globally.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
     follow: true,
     googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 },
-  },
-  verification: {
-    google: "your-google-search-console-code",
   },
   category: "Digital Agency",
 };
@@ -70,9 +67,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en-AU" className={poppins.variable}>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <meta name="theme-color" content="#0d1f14" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <meta name="theme-color" content="#d4af37" />
         <link rel="manifest" href="/site.webmanifest" />
         {/* Preload LCP hero image so browser fetches it immediately */}
         <link
@@ -92,12 +87,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               "@graph": [
                 {
                   "@type": "Organization",
-                  "@id": "https://goldenlining.com.au/#organization",
+                  "@id": "https://goldenliningsolution.com/#organization",
                   name: "Goldenlining Solution",
-                  url: "https://goldenlining.com.au",
+                  url: "https://goldenliningsolution.com",
                   logo: {
                     "@type": "ImageObject",
-                    url: "https://goldenlining.com.au/logo.svg",
+                    url: "https://goldenliningsolution.com/logo.svg",
                     width: 200,
                     height: 60,
                   },
@@ -119,14 +114,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 },
                 {
                   "@type": "LocalBusiness",
-                  "@id": "https://goldenlining.com.au/#localbusiness",
+                  "@id": "https://goldenliningsolution.com/#localbusiness",
                   name: "Goldenlining Solution",
                   description: "Premium web design, SEO, Google Ads, branding and digital marketing agency based in Adelaide, Australia. Serving clients globally.",
-                  url: "https://goldenlining.com.au",
+                  url: "https://goldenliningsolution.com",
                   telephone: "+61-480-684-500",
                   email: "goldenliningsolution@gmail.com",
                   priceRange: "$$",
-                  image: "https://goldenlining.com.au/og-image.jpg",
+                  image: "https://goldenliningsolution.com/og-image.jpg",
                   address: {
                     "@type": "PostalAddress",
                     streetAddress: "Croydon Park",
@@ -167,14 +162,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 },
                 {
                   "@type": "WebSite",
-                  "@id": "https://goldenlining.com.au/#website",
-                  url: "https://goldenlining.com.au",
+                  "@id": "https://goldenliningsolution.com/#website",
+                  url: "https://goldenliningsolution.com",
                   name: "Goldenlining Solution",
                   description: "Premium web design, SEO & digital agency — Australia & Global",
-                  publisher: { "@id": "https://goldenlining.com.au/#organization" },
+                  publisher: { "@id": "https://goldenliningsolution.com/#organization" },
                   potentialAction: {
                     "@type": "SearchAction",
-                    target: "https://goldenlining.com.au/blog?q={search_term_string}",
+                    target: "https://goldenliningsolution.com/blog?q={search_term_string}",
                     "query-input": "required name=search_term_string",
                   },
                   inLanguage: "en-AU",
