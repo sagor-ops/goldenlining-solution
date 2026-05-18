@@ -89,9 +89,9 @@ export default function ProcessTimeline() {
                   >
                     <div className="absolute inset-2 rounded-full border border-dashed border-[#d4af37]/30 group-hover:rotate-180 transition-transform duration-1000 ease-in-out" />
                     <Icon size={32} style={{ color: "#d4af37" }} className="relative z-10" />
-                    
+
                     {/* Step Number Badge */}
-                    <div 
+                    <div
                       className="absolute -top-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold font-mono"
                       style={{ background: "#d4af37", color: "#000" }}
                     >

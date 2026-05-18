@@ -109,9 +109,9 @@ export default function Hero() {
           style={{ perspective: "400px" }}
         >
           {[
-            { color: "rgba(212,175,55,0.65)", dur: 9,  anim: "spin-3d-y", w: 2 },
+            { color: "rgba(212,175,55,0.65)", dur: 9, anim: "spin-3d-y", w: 2 },
             { color: "rgba(212,175,55,0.35)", dur: 14, anim: "spin-3d-x", w: 1 },
-            { color: "rgba(212,175,55,0.2)",  dur: 19, anim: "spin-3d-z", w: 1 },
+            { color: "rgba(212,175,55,0.2)", dur: 19, anim: "spin-3d-z", w: 1 },
           ].map((r, i) => (
             <div
               key={i}
@@ -174,7 +174,7 @@ export default function Hero() {
                 We Build Digital
               </span>
               <span
-                className="block gold-text-animated text-3d"
+                className="block gold-text-animated"
                 style={{ fontSize: "clamp(3rem, 7.5vw, 6.5rem)", transform: "translateZ(30px)", lineHeight: 1 }}
               >
                 Experiences
