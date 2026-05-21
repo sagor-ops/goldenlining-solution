@@ -12,6 +12,14 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/icon.png",    sizes: "512x512", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple:    "/icon.png",
+  },
   title: {
     default: "Goldenlining Solution | Web Design, SEO & Digital Agency — Australia",
     template: "%s | Goldenlining Solution",
