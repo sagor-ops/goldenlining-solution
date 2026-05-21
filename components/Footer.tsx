@@ -76,8 +76,17 @@ export default function Footer() {
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="col-span-2 lg:col-span-2">
-            <Link href="/" className="inline-block mb-6 group">
-              <img src="/logo.svg" alt="Goldenlining Solution" className="h-14 w-auto group-hover:opacity-80 transition-opacity" width="200" height="56" decoding="async" />
+            <Link href="/" className="flex items-center gap-3 mb-6 group shrink-0">
+              <div
+                style={{
+                  width: 3,
+                  height: 42,
+                  background: "#d4af37",
+                  boxShadow: "0 0 10px rgba(212,175,55,0.6)",
+                  flexShrink: 0,
+                }}
+              />
+              <img src="/logo-footer.png" alt="Goldenlining Solution" className="h-14 w-auto group-hover:opacity-80 transition-opacity" width="300" height="58" decoding="async" />
             </Link>
 
             <p className="text-sm leading-relaxed mb-6 max-w-xs" style={{ color: "rgba(255,255,255,0.35)" }}>

@@ -67,7 +67,7 @@ export default function Navigation() {
           <div className="max-w-7xl mx-auto px-6 flex items-center justify-between gap-8">
 
             {/* Logo with gold accent bar */}
-            <Link href="/" className="group flex items-center gap-3 shrink-0">
+            <Link href="/" className="group flex items-center gap-3 shrink-0" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
               <div
                 className="transition-all duration-400"
                 style={{
@@ -78,11 +78,11 @@ export default function Navigation() {
                 }}
               />
               <img
-                src="/logo.svg"
+                src="/logo-footer.png"
                 alt="Goldenlining Solution"
                 className="h-10 w-auto group-hover:opacity-90 transition-opacity"
-                width="160"
-                height="40"
+                width="300"
+                height="58"
                 decoding="async"
               />
             </Link>
